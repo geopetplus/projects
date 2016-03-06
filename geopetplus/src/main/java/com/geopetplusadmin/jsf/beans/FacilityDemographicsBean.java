@@ -10,6 +10,11 @@ import com.geopetplusadmin.delegate.FacilityDemographicsDelegateImpl;
 import com.geopetplusadmin.exception.DelegateException;
 import com.geopetplusadmin.vo.FacilityDemographicsVO;
 
+/**
+ * 
+ * @author Suresh Kumar Mahalingam
+ *
+ */
 @ManagedBean(name="facilityDemographicsBean")
 @SessionScoped
 public class FacilityDemographicsBean implements Serializable {
