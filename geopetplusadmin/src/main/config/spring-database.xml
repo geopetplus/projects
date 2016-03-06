@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:c="http://www.springframework.org/schema/c"
+    xmlns:p="http://www.springframework.org/schema/p" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+    
+    <!-- Load database properties -->
+  	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    	<property name="location" value="classpath:/geopet-db.properties" />
+  	</bean>
+    
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    	<property name="driverClassName" value="${db.driver}" />
+    	<property name="url" value="${db.url}" />
+    	<property name="username" value="${db.username}" />
+    	<property name="password" value="${db.password}" />
+  	</bean>
+  	
+  	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+    	<property name="dataSource" ref="dataSource"></property>
+    	<property name="hibernateProperties">
+	      	<props>
+	        	<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+	        	<prop key="hibernate.show_sql">true</prop>
+	        	<prop key="hibernate.c3p0.idle_test_period">60</prop>
+	      	</props>
+    	</property>
+    	<property name="mappingResources">
+			<list>
+				<value>com/geopetplusadmin/hibernate/admin/FacilityDemographics.hbm.xml</value>
+				<value>com/geopetplusadmin/hibernate/admin/Login.hbm.xml</value>
+				<value>com/geopetplusadmin/hibernate/admin/Audit.hbm.xml</value>
+			</list>
+		</property>
+  	</bean>
+  	
+  	<!-- HibernateTemplate  -->
+  	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+    
+    <!-- Transaction Management  -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<tx:annotation-driven />
+
+</beans>
