@@ -7,6 +7,7 @@ import javax.faces.bean.SessionScoped;
 
 import com.geopetplusadmin.delegate.FacilityDemographicsDelegate;
 import com.geopetplusadmin.delegate.FacilityDemographicsDelegateImpl;
+import com.geopetplusadmin.exception.DelegateException;
 import com.geopetplusadmin.vo.FacilityDemographicsVO;
 
 @ManagedBean(name="facilityDemographicsBean")
@@ -43,16 +44,23 @@ public class FacilityDemographicsBean implements Serializable {
 	
 	public void insertStatus() throws Exception {
 		
-		FacilityDemographicsDelegate facilityDemographicsDelegate = new FacilityDemographicsDelegateImpl();
+		try {
 		
-		if (facilityDemographicsDelegate != null 
-				&& this.facilityDemographicsVO != null) {
+			FacilityDemographicsDelegate facilityDemographicsDelegate = new FacilityDemographicsDelegateImpl();
 			
-			String status = facilityDemographicsDelegate.insertDemographics(facilityDemographicsVO);
-			this.message = status;
-		} 
-		else {
-			this.message = "Error Occured!";
+			if (facilityDemographicsDelegate != null 
+					&& this.facilityDemographicsVO != null) {
+				
+				String status = facilityDemographicsDelegate.insertDemographics(facilityDemographicsVO);
+				this.message = status;
+			} 
+			else {
+				this.message = "Error Occured!";
+			}
+		}
+		catch (DelegateException exception) {
+			System.out.println(exception.getCause());
+			exception.printStackTrace();
 		}
 		
 	}

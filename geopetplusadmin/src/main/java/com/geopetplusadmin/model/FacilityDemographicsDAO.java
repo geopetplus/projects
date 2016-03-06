@@ -1,8 +1,9 @@
 package com.geopetplusadmin.model;
 
+import com.geopetplusadmin.exception.DAOException;
 import com.geopetplusadmin.hibernate.admin.FacilityDemographicsDO;
 
 public interface FacilityDemographicsDAO {
 	
-	public String insertDemographics(FacilityDemographicsDO facilityDemographicsDO) throws Exception;
+	public String insertDemographics(FacilityDemographicsDO facilityDemographicsDO) throws DAOException;
 }
