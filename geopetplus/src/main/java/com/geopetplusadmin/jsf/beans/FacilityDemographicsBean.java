@@ -24,7 +24,8 @@ public class FacilityDemographicsBean implements Serializable {
 	private String message = "Get Status";
 	private FacilityDemographicsVO facilityDemographicsVO;
 	
-	public FacilityDemographicsBean() {}
+	public FacilityDemographicsBean() {
+	}
 	
 	public String getMessage() {
 		return message;

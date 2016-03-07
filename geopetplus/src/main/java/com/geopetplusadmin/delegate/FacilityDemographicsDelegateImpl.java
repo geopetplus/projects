@@ -16,7 +16,10 @@ public class FacilityDemographicsDelegateImpl implements FacilityDemographicsDel
 		try {
 			
 			FacilityDemographicsService facilityDemographicsService = (FacilityDemographicsService) SpringServiceFactory.getBean("facilityDemographicService");
-			if (facilityDemographicsService != null) {
+			
+			if (facilityDemographicsService != null 
+					&& facilityDemographicsVO != null) {
+
 				status = facilityDemographicsService.insertDemographics(facilityDemographicsVO);
 			}
 		}
