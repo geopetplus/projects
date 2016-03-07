@@ -56,7 +56,7 @@ public class FacilityDemographicsBean implements Serializable {
 			if (facilityDemographicsDelegate != null 
 					&& this.facilityDemographicsVO != null) {
 				
-				String status = facilityDemographicsDelegate.insertDemographics(facilityDemographicsVO);
+				String status = facilityDemographicsDelegate.insertDemographics(this.facilityDemographicsVO);
 				this.message = status;
 			} 
 			else {
@@ -67,6 +67,6 @@ public class FacilityDemographicsBean implements Serializable {
 			System.out.println(exception.getCause());
 			exception.printStackTrace();
 		}
-		
 	}
+
 }
