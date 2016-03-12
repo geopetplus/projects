@@ -12,10 +12,10 @@ import com.geopetplusadmin.vo.FacilityDemographicsVO;
 
 /**
  * 
- * @author Suresh Kumar Mahalingam
+ * @author Suresh
  *
  */
-@ManagedBean(name="facilityDemographicsBean")
+@ManagedBean(name="facilityDemographicsBean", eager=true)
 @SessionScoped
 public class FacilityDemographicsBean implements Serializable {
 	
