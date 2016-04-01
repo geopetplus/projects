@@ -167,19 +167,19 @@
 							        </div>
 						        </div>
 					
-						      <!-- <div class="form-group">
+						      <div class="form-group">
 							        <label class="col-md-2 control-label">*Services</label>
 							        <div class="col-md-10 textfieldGroupContainer">
 							          <div class="textfield-group">
-							            <h:selectManyCheckbox value="#{facilityDemographicsBean.facilityDemographicsVO.facilityWhatsAppNum}" id="services" labelposition="inline" required="true">
+							            <p:selectManyCheckbox value="#{facilityDemographicsBean.facilityDemographicsVO.services}" id="services" labelposition="inline" required="true">
 										   	<f:selectItem itemValue="Clinical" itemLabel="&nbsp;Clinical&nbsp;&nbsp;&nbsp;" />
 										   	<f:selectItem itemValue="Laboratory" itemLabel="&nbsp;Laboratory&nbsp;&nbsp;&nbsp;" />
 										   	<f:selectItem itemValue="PetStores" itemLabel="&nbsp;Pet Stores&nbsp;&nbsp;&nbsp;" />
 										   	<f:selectItem itemValue="BreedersHub" itemLabel="&nbsp;Breeders Hub&nbsp;&nbsp;&nbsp;" />
-										</h:selectManyCheckbox>
+										</p:selectManyCheckbox>
 							          </div>
 							        </div>
-						      </div> -->
+						      </div>
 						      
 								<div class="form-group">
 						        <label class="col-md-4 control-label"></label>
@@ -188,12 +188,10 @@
 						    		<p:commandButton 
 						    			id="idButton" 
 						    			value="Submit" 
-						    			action="#{facilityDemographicsBean.insertStatus}" 
+						    			action="#{facilityDemographicsBean.saveFacilityDemographics}" 
 						    			update=":RegistrationForm:idMessage" />
 						    		<p:spacer width="20px" />
-						    		<p:commandButton value="Reset" update=":RegistrationForm" immediate="true">
-					                    <p:resetInput target=":RegistrationForm" />
-					                </p:commandButton>
+						    		<p:commandButton value="Reset" update=":RegistrationForm :RegistrationForm:idMessage" actionListener="#{facilityDemographicsBean.resetFacilityDemographics}" />
 					                <p:messages id="idMessage" />
 						    		<!-- <p:messages id="idMessage" value="#{facilityDemographicsBean.message}"></p:messages> 
 						    		<b:alert id="idMessage" severity="info" closable="true" rendered="true"><strong>Alert:</strong>Insert success! </b:alert>

@@ -2,6 +2,7 @@ package com.geopetplusadmin.jsf.beans;
 
 import java.io.Serializable;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -10,14 +11,18 @@ import com.geopetplusadmin.delegate.FacilityDemographicsDelegateImpl;
 import com.geopetplusadmin.exception.DelegateException;
 import com.geopetplusadmin.vo.FacilityDemographicsVO;
 
+import org.apache.log4j.Logger;
+
 /**
  * 
  * @author Suresh
  *
  */
-@ManagedBean(name="facilityDemographicsBean", eager=true)
+@ManagedBean(name = "facilityDemographicsBean")
 @SessionScoped
 public class FacilityDemographicsBean implements Serializable {
+	
+	private final static Logger LOGGER = Logger.getLogger(FacilityDemographicsBean.class);
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -25,6 +30,10 @@ public class FacilityDemographicsBean implements Serializable {
 	private FacilityDemographicsVO facilityDemographicsVO;
 	
 	public FacilityDemographicsBean() {
+	}
+	
+	@PostConstruct
+	public void init() {
 	}
 	
 	public String getMessage() {
@@ -48,16 +57,18 @@ public class FacilityDemographicsBean implements Serializable {
 		this.facilityDemographicsVO = facilityDemographicsVO;
 	}
 	
-	public void insertStatus() throws Exception {
+	public void saveFacilityDemographics() throws Exception {
+		
+		LOGGER.info("Invoked FacilityDemographicsBean.java # saveFacilityDemographics() method");
 		
 		try {
-		
+			
 			FacilityDemographicsDelegate facilityDemographicsDelegate = new FacilityDemographicsDelegateImpl();
 			
 			if (facilityDemographicsDelegate != null 
 					&& this.facilityDemographicsVO != null) {
 				
-				String status = facilityDemographicsDelegate.insertDemographics(this.facilityDemographicsVO);
+				String status = facilityDemographicsDelegate.saveFacilityDemographics(this.facilityDemographicsVO);
 				this.message = status;
 			} 
 			else {
@@ -68,6 +79,15 @@ public class FacilityDemographicsBean implements Serializable {
 			System.out.println(exception.getCause());
 			exception.printStackTrace();
 		}
+		
+		LOGGER.info("Exited FacilityDemographicsBean.java # saveFacilityDemographics() method");
+	}
+	
+	public void resetFacilityDemographics() throws Exception {
+		
+		LOGGER.info("Invoked FacilityDemographicsBean.java # resetFacilityDemographics() method");
+		this.facilityDemographicsVO = null;
+		LOGGER.info("Exited FacilityDemographicsBean.java # resetFacilityDemographics() method");
 	}
 
 }

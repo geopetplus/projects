@@ -1,20 +1,34 @@
 package com.geopetplusadmin.jsf.beans;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+
+import org.apache.log4j.Logger;
 
 import com.geopetplusadmin.delegate.LoginDelegate;
 import com.geopetplusadmin.delegate.LoginDelegateImpl;
 import com.geopetplusadmin.vo.LoginVO;
 
-
+/**
+ * 
+ * @author Suresh
+ *
+ */
 @ManagedBean(name = "loginBean")
 @SessionScoped
 public class LoginBean {
 	
+	private final static Logger LOGGER = Logger.getLogger(LoginBean.class);
+	
 	private String message = "Initial Content";
 	
-	public LoginBean(){}
+	public LoginBean(){
+	}
+	
+	@PostConstruct
+	public void init() {
+	}
 	
 	public String getMessage() {
 		return message;
@@ -29,7 +43,9 @@ public class LoginBean {
 	}
 	
 	public void insertLoginStatus() throws Exception {
-		System.out.println("Step 1");
+		
+		LOGGER.info("Invoked LoginBean.java # insertLoginStatus() method");
+		
 		LoginVO loginVO = new LoginVO();
 		
 		loginVO.setFacilityid("facilityid");
@@ -41,6 +57,8 @@ public class LoginBean {
 			System.out.println("Step 3:"+status);
 			this.message = status;	
 		}
+		
+		LOGGER.info("Exited LoginBean.java # insertLoginStatus() method");
 	}
 	
 }

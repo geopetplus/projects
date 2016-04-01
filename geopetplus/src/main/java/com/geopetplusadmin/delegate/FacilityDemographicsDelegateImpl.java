@@ -1,5 +1,6 @@
 package com.geopetplusadmin.delegate;
 
+import org.apache.log4j.Logger;
 import org.hibernate.service.spi.ServiceException;
 
 import com.geopetplusadmin.exception.DelegateException;
@@ -9,7 +10,11 @@ import com.geopetplusadmin.vo.FacilityDemographicsVO;
 
 public class FacilityDemographicsDelegateImpl implements FacilityDemographicsDelegate {
 	
-	public String insertDemographics(FacilityDemographicsVO facilityDemographicsVO) throws DelegateException {
+	private final static Logger LOGGER = Logger.getLogger(FacilityDemographicsDelegateImpl.class);
+	
+	public String saveFacilityDemographics(FacilityDemographicsVO facilityDemographicsVO) throws DelegateException {
+		
+		LOGGER.info("Invoked FacilityDemographicsDelegateImpl.java # saveFacilityDemographics(FacilityDemographicsVO) method");
 		
 		String status = null;
 		
@@ -20,7 +25,7 @@ public class FacilityDemographicsDelegateImpl implements FacilityDemographicsDel
 			if (facilityDemographicsService != null 
 					&& facilityDemographicsVO != null) {
 
-				status = facilityDemographicsService.insertDemographics(facilityDemographicsVO);
+				status = facilityDemographicsService.saveFacilityDemographics(facilityDemographicsVO);
 			}
 		}
 		catch (ServiceException exception) {
@@ -29,6 +34,8 @@ public class FacilityDemographicsDelegateImpl implements FacilityDemographicsDel
 		catch (Exception exception) {
 			throw new DelegateException(exception.getMessage(), exception);
 		}
+		
+		LOGGER.info("Exited FacilityDemographicsDelegateImpl.java # saveFacilityDemographics(FacilityDemographicsVO) method");
 		
 		return status;
 	}
