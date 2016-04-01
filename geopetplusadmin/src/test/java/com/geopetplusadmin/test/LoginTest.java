@@ -22,10 +22,7 @@ public class LoginTest extends AbstractJUnit4SpringContextTests {
 	public void testinsertLogin() throws Exception {
 		
 		LoginVO loginvo = new LoginVO();
-		
-		System.out.println("Step1:"+loginvo.getFacilityid());
-		
-		assertTrue(loginvo.getFacilityid().length()>0);
+		assertNotNull(loginvo);
 		
 	}
 	

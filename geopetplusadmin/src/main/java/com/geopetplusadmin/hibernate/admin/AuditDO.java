@@ -6,44 +6,26 @@ public class AuditDO {
 	
 	private String auditId;
 	private String typeofrequest;
-	private String currenttransaction;
-	private String previoustransaction;
-	private String adminrepid;
+	private String transaction;
+	private String adminid;
 	private String requestchannel;
 	private String useragent;
-	private String custormerrepname;
-	private String customerrepcontactno;
+	private String facilityid;
 	private Date requestdate;
-	private Date requeststarttime;
-	private Date requestendtime;
-	private String languageused;
-	private String requestduration;
-	private String notes;
 	
 	public AuditDO(){}
 
-	public AuditDO(String auditId, String typeofrequest,
-			String currenttransaction, String previoustransaction,
-			String adminrepid, String requestchannel, String useragent,
-			String custormerrepname, String customerrepcontactno,
-			Date requestdate, Date requeststarttime, Date requestendtime,
-			String languageused, String requestduration, String notes) {
+	public AuditDO(String auditId, String typeofrequest, String transaction, String adminid, String requestchannel,
+			String useragent, String facilityid, Date requestdate) {
 		super();
 		this.auditId = auditId;
 		this.typeofrequest = typeofrequest;
-		this.currenttransaction = currenttransaction;
-		this.previoustransaction = previoustransaction;
-		this.adminrepid = adminrepid;
+		this.transaction = transaction;
+		this.adminid = adminid;
 		this.requestchannel = requestchannel;
 		this.useragent = useragent;
-		this.custormerrepname = custormerrepname;
-		this.customerrepcontactno = customerrepcontactno;
+		this.facilityid = facilityid;
 		this.requestdate = requestdate;
-		this.requeststarttime = requeststarttime;
-		this.requestendtime = requestendtime;
-		this.languageused = languageused;
-		this.requestduration = requestduration;
-		this.notes = notes;
 	}
 
 	public String getAuditId() {
@@ -62,28 +44,20 @@ public class AuditDO {
 		this.typeofrequest = typeofrequest;
 	}
 
-	public String getCurrenttransaction() {
-		return currenttransaction;
+	public String getTransaction() {
+		return transaction;
 	}
 
-	public void setCurrenttransaction(String currenttransaction) {
-		this.currenttransaction = currenttransaction;
+	public void setTransaction(String transaction) {
+		this.transaction = transaction;
 	}
 
-	public String getPrevioustransaction() {
-		return previoustransaction;
+	public String getAdminid() {
+		return adminid;
 	}
 
-	public void setPrevioustransaction(String previoustransaction) {
-		this.previoustransaction = previoustransaction;
-	}
-
-	public String getAdminrepid() {
-		return adminrepid;
-	}
-
-	public void setAdminrepid(String adminrepid) {
-		this.adminrepid = adminrepid;
+	public void setAdminid(String adminid) {
+		this.adminid = adminid;
 	}
 
 	public String getRequestchannel() {
@@ -102,20 +76,12 @@ public class AuditDO {
 		this.useragent = useragent;
 	}
 
-	public String getCustormerrepname() {
-		return custormerrepname;
+	public String getFacilityid() {
+		return facilityid;
 	}
 
-	public void setCustormerrepname(String custormerrepname) {
-		this.custormerrepname = custormerrepname;
-	}
-
-	public String getCustomerrepcontactno() {
-		return customerrepcontactno;
-	}
-
-	public void setCustomerrepcontactno(String customerrepcontactno) {
-		this.customerrepcontactno = customerrepcontactno;
+	public void setFacilityid(String facilityid) {
+		this.facilityid = facilityid;
 	}
 
 	public Date getRequestdate() {
@@ -126,59 +92,11 @@ public class AuditDO {
 		this.requestdate = requestdate;
 	}
 
-	public Date getRequeststarttime() {
-		return requeststarttime;
-	}
-
-	public void setRequeststarttime(Date requeststarttime) {
-		this.requeststarttime = requeststarttime;
-	}
-
-	public Date getRequestendtime() {
-		return requestendtime;
-	}
-
-	public void setRequestendtime(Date requestendtime) {
-		this.requestendtime = requestendtime;
-	}
-
-	public String getLanguageused() {
-		return languageused;
-	}
-
-	public void setLanguageused(String languageused) {
-		this.languageused = languageused;
-	}
-
-	public String getRequestduration() {
-		return requestduration;
-	}
-
-	public void setRequestduration(String requestduration) {
-		this.requestduration = requestduration;
-	}
-
-	public String getNotes() {
-		return notes;
-	}
-
-	public void setNotes(String notes) {
-		this.notes = notes;
-	}
-
 	@Override
 	public String toString() {
-		return "Audit [auditId=" + auditId + ", typeofrequest=" + typeofrequest
-				+ ", currenttransaction=" + currenttransaction
-				+ ", previoustransaction=" + previoustransaction
-				+ ", adminrepid=" + adminrepid + ", requestchannel="
-				+ requestchannel + ", useragent=" + useragent
-				+ ", custormerrepname=" + custormerrepname
-				+ ", customerrepcontactno=" + customerrepcontactno
-				+ ", requestdate=" + requestdate + ", requeststarttime="
-				+ requeststarttime + ", requestendtime=" + requestendtime
-				+ ", languageused=" + languageused + ", requestduration="
-				+ requestduration + ", notes=" + notes + "]";
+		return "AuditDO [auditId=" + auditId + ", typeofrequest=" + typeofrequest + ", transaction=" + transaction
+				+ ", adminid=" + adminid + ", requestchannel=" + requestchannel + ", useragent=" + useragent
+				+ ", facilityid=" + facilityid + ", requestdate=" + requestdate + "]";
 	}
 	
 }

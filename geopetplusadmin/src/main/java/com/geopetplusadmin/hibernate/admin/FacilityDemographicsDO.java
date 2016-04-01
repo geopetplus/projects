@@ -1,5 +1,6 @@
 package com.geopetplusadmin.hibernate.admin;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class FacilityDemographicsDO {
@@ -14,6 +15,7 @@ public class FacilityDemographicsDO {
 	private String mailingCity;
 	private String mailingState;
 	private String mailingPincode;
+	private boolean sameAddress;
 	private String billAddr1;
 	private String billAddr2;
 	private String billLocation;
@@ -32,20 +34,18 @@ public class FacilityDemographicsDO {
 	private Date lastUpdateDate;
 	private String status;
 	private String auditID;
+	private ArrayList<String> services;
 	
 	public FacilityDemographicsDO(){}
-	
-	public FacilityDemographicsDO(String facilityid, String facilityname,
-			String contactLastName, String contactFirstName, String versionid, String mailAddr1,
-			String mailAddr2, String mailingLocation, String mailingCity,
-			String mailingState, String mailingPincode, String billAddr1,
-			String billAddr2, String billLocation, String billCity,
-			String billState, String billPincode, String facilityPhone,
-			String facilityAltPhone, String facilyMobileNum,
-			String facilityWhatsAppNum, String facilityEmail1,
-			String facilityEmail2, String facilityURL,
-			Date facilityRegStartDate, Date facilityRegEndDate,
-			Date lastUpdateDate, String status, String auditID) {
+
+	public FacilityDemographicsDO(String facilityid, String facilityname, String contactLastName,
+			String contactFirstName, String versionid, String mailAddr1, String mailAddr2, String mailingLocation,
+			String mailingCity, String mailingState, String mailingPincode, boolean sameAddress, String billAddr1,
+			String billAddr2, String billLocation, String billCity, String billState, String billPincode,
+			String facilityPhone, String facilityAltPhone, String facilyMobileNum, String facilityWhatsAppNum,
+			String facilityEmail1, String facilityEmail2, String facilityURL, Date facilityRegStartDate,
+			Date facilityRegEndDate, Date lastUpdateDate, String status, String auditID, ArrayList<String> services) {
+		super();
 		this.facilityid = facilityid;
 		this.facilityname = facilityname;
 		this.contactLastName = contactLastName;
@@ -57,6 +57,7 @@ public class FacilityDemographicsDO {
 		this.mailingCity = mailingCity;
 		this.mailingState = mailingState;
 		this.mailingPincode = mailingPincode;
+		this.sameAddress = sameAddress;
 		this.billAddr1 = billAddr1;
 		this.billAddr2 = billAddr2;
 		this.billLocation = billLocation;
@@ -75,6 +76,7 @@ public class FacilityDemographicsDO {
 		this.lastUpdateDate = lastUpdateDate;
 		this.status = status;
 		this.auditID = auditID;
+		this.services = services;
 	}
 
 	public String getFacilityid() {
@@ -165,6 +167,14 @@ public class FacilityDemographicsDO {
 		this.mailingPincode = mailingPincode;
 	}
 
+	public boolean isSameAddress() {
+		return sameAddress;
+	}
+
+	public void setSameAddress(boolean sameAddress) {
+		this.sameAddress = sameAddress;
+	}
+
 	public String getBillAddr1() {
 		return billAddr1;
 	}
@@ -220,7 +230,7 @@ public class FacilityDemographicsDO {
 	public void setFacilityPhone(String facilityPhone) {
 		this.facilityPhone = facilityPhone;
 	}
-	
+
 	public String getFacilityAltPhone() {
 		return facilityAltPhone;
 	}
@@ -309,27 +319,28 @@ public class FacilityDemographicsDO {
 		this.auditID = auditID;
 	}
 
+	public ArrayList<String> getServices() {
+		return services;
+	}
+
+	public void setServices(ArrayList<String> services) {
+		this.services = services;
+	}
+
 	@Override
 	public String toString() {
-		return "FacilityDemographics [facilityid=" + facilityid
-				+ ", facilityname=" + facilityname + ", contactLastName="
-				+ contactLastName + ", contactFirstName=" + contactFirstName
-				+ ", versionid=" + versionid + ", mailAddr1=" + mailAddr1 + ", mailAddr2=" + mailAddr2
-				+ ", mailingLocation=" + mailingLocation + ", mailingCity="
-				+ mailingCity + ", mailingState=" + mailingState
-				+ ", mailingPincode=" + mailingPincode + ", billAddr1="
-				+ billAddr1 + ", billAddr2=" + billAddr2 + ", billLocation="
-				+ billLocation + ", billCity=" + billCity + ", billState="
-				+ billState + ", billPincode=" + billPincode
-				+ ", facilityPhone=" + facilityPhone + ", facilityAltPhone="
-				+ facilityAltPhone + ", facilyMobileNum=" + facilyMobileNum
-				+ ", facilityWhatsAppNum=" + facilityWhatsAppNum
-				+ ", facilityEmail1=" + facilityEmail1 + ", facilityEmail2="
-				+ facilityEmail2 + ", facilityURL=" + facilityURL
-				+ ", facilityRegStartDate=" + facilityRegStartDate
-				+ ", facilityRegEndDate=" + facilityRegEndDate
-				+ ", lastUpdateDate=" + lastUpdateDate + ", status=" + status
-				+ ", auditID=" + auditID + "]";
+		return "FacilityDemographicsDO [facilityid=" + facilityid + ", facilityname=" + facilityname
+				+ ", contactLastName=" + contactLastName + ", contactFirstName=" + contactFirstName + ", versionid="
+				+ versionid + ", mailAddr1=" + mailAddr1 + ", mailAddr2=" + mailAddr2 + ", mailingLocation="
+				+ mailingLocation + ", mailingCity=" + mailingCity + ", mailingState=" + mailingState
+				+ ", mailingPincode=" + mailingPincode + ", sameAddress=" + sameAddress + ", billAddr1=" + billAddr1
+				+ ", billAddr2=" + billAddr2 + ", billLocation=" + billLocation + ", billCity=" + billCity
+				+ ", billState=" + billState + ", billPincode=" + billPincode + ", facilityPhone=" + facilityPhone
+				+ ", facilityAltPhone=" + facilityAltPhone + ", facilyMobileNum=" + facilyMobileNum
+				+ ", facilityWhatsAppNum=" + facilityWhatsAppNum + ", facilityEmail1=" + facilityEmail1
+				+ ", facilityEmail2=" + facilityEmail2 + ", facilityURL=" + facilityURL + ", facilityRegStartDate="
+				+ facilityRegStartDate + ", facilityRegEndDate=" + facilityRegEndDate + ", lastUpdateDate="
+				+ lastUpdateDate + ", status=" + status + ", auditID=" + auditID + ", services=" + services + "]";
 	}
-	
+		
 }

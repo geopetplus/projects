@@ -21,22 +21,7 @@ public class LoginServiceImpl implements LoginService {
 	}
 
 	public String insertLogin(LoginVO loginVO) throws Exception {
-		
-		CommonUtils getFacilityId = new CommonUtils();
-		String facilityId = getFacilityId.generateFacilityId("facilityName", "facilityOwner");
-		
-		/*LoginDO loginEntries = new LoginDO();
-		loginEntries.setFacilityid(facilityId);
-		loginEntries.setVersionid("V001");
-		loginEntries.setUserid(facilityId);
-		loginEntries.setPassword("pass1");
-		loginEntries.setLastupdated(new Timestamp(System.currentTimeMillis()));
-		loginEntries.setRole("Owner");
-		loginEntries.setStatus("IA");
-		loginEntries.setAuditid("Aud001");*/
-		
 		LoginDO loginDO = TranformationUtils.transformLoginVO(loginVO);
-		
 		return loginDAO.insertLogin(loginDO);
 	}
 

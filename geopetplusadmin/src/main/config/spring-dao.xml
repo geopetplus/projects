@@ -19,7 +19,10 @@
 	<bean id="LoginDAO" class="com.geopetplusadmin.model.LoginDAOImpl">
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
 	</bean>
-	<bean id="AudithistoryDAO" class="com.geopetplusadmin.model.AudithistoryDAOImpl">
+	<bean id="AuditDAO" class="com.geopetplusadmin.model.AuditDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="TransactionServicesDAO" class="com.geopetplusadmin.model.TransactionServicesDAOImpl">
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
 	</bean>
 

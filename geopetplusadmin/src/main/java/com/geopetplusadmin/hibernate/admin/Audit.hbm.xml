@@ -8,46 +8,25 @@
 			<generator class="assigned" />
 		</id>
 		<property name="typeofrequest" type="java.lang.String">
-			<column name="typeofrequest" length="10" not-null="true" />
+			<column name="typeofrequest" length="200" not-null="true" />
 		</property>
-		<property name="currenttransaction" type="java.lang.String">
-			<column name="currenttransaction" length="36" not-null="true" />
+		<property name="transaction" type="java.lang.String">
+			<column name="transaction" length="200" not-null="true" />
 		</property>
-		<property name="previoustransaction" type="java.lang.String">
-			<column name="previoustransaction" length="36" not-null="true" />
-		</property>
-		<property name="adminrepid" type="java.lang.String">
-			<column name="adminrepid" length="11" not-null="true" />
+		<property name="adminid" type="java.lang.String">
+			<column name="adminid" length="11" not-null="true" />
 		</property>
 		<property name="requestchannel" type="java.lang.String">
 			<column name="requestchannel" length="10" not-null="true" />
 		</property>
 		<property name="useragent" type="java.lang.String">
-			<column name="useragent" length="20" not-null="true" />
+			<column name="useragent" length="200" not-null="true" />
 		</property>
-		<property name="custormerrepname" type="java.lang.String">
-			<column name="custormerrepname" length="45" not-null="true" />
-		</property>
-		<property name="customerrepcontactno" type="java.lang.String">
-			<column name="customerrepcontactno" length="10" not-null="true" />
+		<property name="facilityid" type="java.lang.String">
+			<column name="facilityid" length="11" not-null="true" />
 		</property>
 		<property name="requestdate" type="java.util.Date">
 			<column name="requestdate" not-null="true" />
-		</property>
-		<property name="requeststarttime" type="java.util.Date">
-			<column name="requeststarttime" not-null="true" />
-		</property>
-		<property name="requestendtime" type="java.util.Date">
-			<column name="requestendtime" not-null="true" />
-		</property>
-		<property name="languageused" type="java.lang.String">
-			<column name="languageused" length="8" not-null="true" />
-		</property>
-		<property name="requestduration" type="java.lang.String">
-			<column name="requestduration" length="8" not-null="true" />
-		</property>
-		<property name="notes" type="java.lang.String">
-			<column name="notes" length="200" not-null="true" />
-		</property>
+		</property>		
 	</class>
 </hibernate-mapping>

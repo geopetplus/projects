@@ -19,8 +19,8 @@
 	<bean id="loginService" class="com.geopetplusadmin.service.LoginServiceImpl">
 		<property name="LoginDAO" ref="LoginDAO" />
 	</bean>
-	<bean id="audithistoryService" class="com.geopetplusadmin.service.AudithistoryServiceImpl">
-		<property name="AudithistoryDAO" ref="AudithistoryDAO" />
+	<bean id="auditService" class="com.geopetplusadmin.service.AuditServiceImpl">
+		<property name="AuditDAO" ref="AuditDAO" />
 	</bean>
 
 </beans>
