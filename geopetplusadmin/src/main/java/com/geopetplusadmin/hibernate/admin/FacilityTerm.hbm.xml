@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.geopetplusadmin.hibernate.admin.FacilityTermDO" table="FacilityTerm">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="increment" />
+		</id>
+		<property name="facilityid" type="java.lang.String">
+			<column name="facilityid" length="11" not-null="true" />
+		</property>
+		<property name="policyid" type="java.lang.String">
+			<column name="policyid" length="11" not-null="true" />
+		</property>
+		<property name="termid" type="java.lang.String">
+			<column name="termid" length="6" not-null="true" />
+		</property>
+		<property name="transactionseqnbr" type="java.lang.String">
+			<column name="transactionseqnbr" length="11" not-null="true" />
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" length="3"  not-null="true"/>
+		</property>
+		<property name="termeffectivedate" type="java.util.Date">
+			<column name="termeffectivedate" not-null="true" />
+		</property>
+		<property name="termenddate" type="java.util.Date">
+			<column name="termenddate" not-null="true" />
+		</property>
+		<property name="autorenewind" type="java.lang.String">
+			<column name="autorenewind" length="1" not-null="true" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

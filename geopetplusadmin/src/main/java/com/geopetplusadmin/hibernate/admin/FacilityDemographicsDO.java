@@ -1,9 +1,15 @@
 package com.geopetplusadmin.hibernate.admin;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class FacilityDemographicsDO {
+import org.apache.log4j.Logger;
+
+public class FacilityDemographicsDO implements Serializable {
+	
+	private final static Logger LOGGER = Logger.getLogger(FacilityDemographicsDO.class);
+	
 	private String facilityid;
 	private String facilityname;
 	private String contactLastName;
@@ -32,7 +38,6 @@ public class FacilityDemographicsDO {
 	private Date facilityRegStartDate;
 	private Date facilityRegEndDate;
 	private Date lastUpdateDate;
-	private String status;
 	private String auditID;
 	private ArrayList<String> services;
 	
@@ -44,7 +49,7 @@ public class FacilityDemographicsDO {
 			String billAddr2, String billLocation, String billCity, String billState, String billPincode,
 			String facilityPhone, String facilityAltPhone, String facilyMobileNum, String facilityWhatsAppNum,
 			String facilityEmail1, String facilityEmail2, String facilityURL, Date facilityRegStartDate,
-			Date facilityRegEndDate, Date lastUpdateDate, String status, String auditID, ArrayList<String> services) {
+			Date facilityRegEndDate, Date lastUpdateDate, String auditID, ArrayList<String> services) {
 		super();
 		this.facilityid = facilityid;
 		this.facilityname = facilityname;
@@ -74,7 +79,6 @@ public class FacilityDemographicsDO {
 		this.facilityRegStartDate = facilityRegStartDate;
 		this.facilityRegEndDate = facilityRegEndDate;
 		this.lastUpdateDate = lastUpdateDate;
-		this.status = status;
 		this.auditID = auditID;
 		this.services = services;
 	}
@@ -303,14 +307,6 @@ public class FacilityDemographicsDO {
 		this.lastUpdateDate = lastUpdateDate;
 	}
 
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public String getAuditID() {
 		return auditID;
 	}
@@ -340,7 +336,7 @@ public class FacilityDemographicsDO {
 				+ ", facilityWhatsAppNum=" + facilityWhatsAppNum + ", facilityEmail1=" + facilityEmail1
 				+ ", facilityEmail2=" + facilityEmail2 + ", facilityURL=" + facilityURL + ", facilityRegStartDate="
 				+ facilityRegStartDate + ", facilityRegEndDate=" + facilityRegEndDate + ", lastUpdateDate="
-				+ lastUpdateDate + ", status=" + status + ", auditID=" + auditID + ", services=" + services + "]";
+				+ lastUpdateDate + ", auditID=" + auditID + ", services=" + services + "]";
 	}
 		
 }

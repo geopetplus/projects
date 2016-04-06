@@ -18,7 +18,7 @@ import org.apache.log4j.Logger;
  * @author Suresh
  *
  */
-@ManagedBean(name = "facilityDemographicsBean")
+@ManagedBean(name = "facilityDemographicsBean", eager=true)
 @SessionScoped
 public class FacilityDemographicsBean implements Serializable {
 	
@@ -58,18 +58,12 @@ public class FacilityDemographicsBean implements Serializable {
 	}
 	
 	public void saveFacilityDemographics() throws Exception {
-		
 		LOGGER.info("Invoked FacilityDemographicsBean.java # saveFacilityDemographics() method");
-		
 		try {
-			
 			FacilityDemographicsDelegate facilityDemographicsDelegate = new FacilityDemographicsDelegateImpl();
-			
-			if (facilityDemographicsDelegate != null 
-					&& this.facilityDemographicsVO != null) {
-				
-				String status = facilityDemographicsDelegate.saveFacilityDemographics(this.facilityDemographicsVO);
-				this.message = status;
+			if (facilityDemographicsDelegate != null && this.facilityDemographicsVO != null) {
+				facilityDemographicsDelegate.saveFacilityDemographics(this.facilityDemographicsVO);
+				this.message = "Facility Updated!";
 			} 
 			else {
 				this.message = "Error Occured!";
@@ -79,7 +73,6 @@ public class FacilityDemographicsBean implements Serializable {
 			System.out.println(exception.getCause());
 			exception.printStackTrace();
 		}
-		
 		LOGGER.info("Exited FacilityDemographicsBean.java # saveFacilityDemographics() method");
 	}
 	

@@ -13,7 +13,6 @@ import org.springframework.test.context.ContextConfiguration;
 
 import com.geopetplusadmin.domain.utility.TranformationUtils;
 import com.geopetplusadmin.hibernate.admin.FacilityDemographicsDO;
-import com.geopetplusadmin.model.FacilityDemographicsDAO;
 import com.geopetplusadmin.service.FacilityDemographicsService;
 import com.geopetplusadmin.vo.FacilityDemographicsVO;
 

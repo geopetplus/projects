@@ -4,5 +4,5 @@ import com.geopetplusadmin.exception.ServiceException;
 import com.geopetplusadmin.vo.FacilityDemographicsVO;
 
 public interface FacilityDemographicsService {
-	public String saveFacilityDemographics(FacilityDemographicsVO facilityDemographicsVO) throws ServiceException;
+	public void saveFacilityDemographics(FacilityDemographicsVO facilityDemographicsVO) throws ServiceException;
 }

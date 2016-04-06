@@ -1,9 +1,15 @@
 package com.geopetplusadmin.hibernate.admin;
 
+import java.io.Serializable;
 import java.util.Date;
+
+import org.apache.log4j.Logger;
+
 import com.geopetplusadmin.vo.FacilityDemographicsVO;
 
-public class LoginDO {
+public class LoginDO implements Serializable {
+	
+	private final static Logger LOGGER = Logger.getLogger(LoginDO.class);
 	
 	private String facilityid;
 	private String versionid;
