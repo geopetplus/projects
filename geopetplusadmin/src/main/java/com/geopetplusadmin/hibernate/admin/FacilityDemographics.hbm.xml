@@ -85,9 +85,6 @@
 		<property name="lastUpdateDate" type="java.util.Date">
 			<column name="lastUpdateDate" length="10" not-null="true" />
 		</property>
-		<property name="status" type="java.lang.String">
-			<column name="status" length="3" not-null="true" />
-		</property>
 		<property name="auditID" type="java.lang.String">
 			<column name="auditID" length="10" not-null="true" />
 		</property>

@@ -12,20 +12,13 @@ public class FacilityDemographicsDelegateImpl implements FacilityDemographicsDel
 	
 	private final static Logger LOGGER = Logger.getLogger(FacilityDemographicsDelegateImpl.class);
 	
-	public String saveFacilityDemographics(FacilityDemographicsVO facilityDemographicsVO) throws DelegateException {
-		
+	public void saveFacilityDemographics(FacilityDemographicsVO facilityDemographicsVO) throws DelegateException {
 		LOGGER.info("Invoked FacilityDemographicsDelegateImpl.java # saveFacilityDemographics(FacilityDemographicsVO) method");
-		
-		String status = null;
-		
 		try {
 			
 			FacilityDemographicsService facilityDemographicsService = (FacilityDemographicsService) SpringServiceFactory.getBean("facilityDemographicService");
-			
-			if (facilityDemographicsService != null 
-					&& facilityDemographicsVO != null) {
-
-				status = facilityDemographicsService.saveFacilityDemographics(facilityDemographicsVO);
+			if (facilityDemographicsService != null && facilityDemographicsVO != null) {
+				facilityDemographicsService.saveFacilityDemographics(facilityDemographicsVO);
 			}
 		}
 		catch (ServiceException exception) {
@@ -34,9 +27,6 @@ public class FacilityDemographicsDelegateImpl implements FacilityDemographicsDel
 		catch (Exception exception) {
 			throw new DelegateException(exception.getMessage(), exception);
 		}
-		
-		LOGGER.info("Exited FacilityDemographicsDelegateImpl.java # saveFacilityDemographics(FacilityDemographicsVO) method");
-		
-		return status;
+		LOGGER.info("Exited FacilityDemographicsDelegateImpl.java # saveFacilityDemographics(FacilityDemographicsVO) method");		
 	}
 }

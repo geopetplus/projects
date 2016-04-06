@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:b="http://bootsfaces.net/ui">
+    
+    <h:head>
+    	<f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />		
+            <title>GeoPetPLUS - Admin Console</title>
+        </f:facet>
+    </h:head>
+     
+    <h:body style="padding-top: 50px; padding-bottom: 20px;">
+    	<ui:composition template="/pages/templates/template.xhtml">
+    		<ui:define name="content">
+    			
+		    	<h:outputStylesheet name="bootstrap.css" library="css" />
+		    	<h:outputStylesheet name="animate.css" library="css" />
+		    	<h:outputStylesheet name="carousel.css" library="css" />
+		    	<h:outputStylesheet name="scrollingNav.css" library="css" />
+		    	<h:outputStylesheet name="custom.css" library="css" />
+    			
+    			<h:outputScript name="bootstrap.js" library="js" />
+		        <h:outputScript name="html5shiv.js" library="js" />
+		        <h:outputScript name="jquery.easing.min.js" library="js" />
+		        <h:outputScript name="jquery.i18n.properties-min-1.0.9.js" library="js" />
+		        <h:outputScript name="jquery-1.11.2.js" library="js" />
+		        <h:outputScript name="holder.js" library="js" />
+		        <h:outputScript name="scrollingNav.js" library="js" />
+		        <h:outputScript name="npm.js" library="js" />
+		        <h:outputScript name="wow.js" library="js" />
+		        <h:outputScript name="wow-min.js" library="js" />
+        
+    			
+    			
+    			<div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4 col-sm-offset-4 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>Login to our site</h3>
+                            		<div class="form-top-right">
+                        			<i class="fa fa-lock"></i>
+                        			</div>
+                        			<p>Enter your username and password to log on:</p>
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+			                    <form role="form" action="" method="post" class="login-form">
+			                    	<div class="form-group">
+			                    		<label class="sr-only" for="form-username">Username</label>
+			                        	<p:inputText id="username" placeholder="UserName" styleClass="form-control" required="true" value="" />
+			                        </div>
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="form-password">Password</label>
+			                        	<p:password id="password" placeholder="Password" styleClass="form-control" required="true" value="" />
+			                        </div>
+			                        <p:commandButton id="idButton" value="Submit" />
+			                        <p:spacer width="20px" />
+						    		<p:commandButton value="Reset" immediate="true" />
+			                    </form><br/>
+		                    	<a href="#">Forget Password</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="pull-right">New Registration</a>
+		                    </div>
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 social-login">
+                        	<h3>...or login with:</h3>
+                        	<div class="social-login-buttons">
+	                        	<a class="btn btn-link-2" href="#">
+	                        		<i class="fa fa-facebook"></i> Facebook
+	                        	</a>
+	                        	<a class="btn btn-link-2" href="#">
+	                        		<i class="fa fa-twitter"></i> Twitter
+	                        	</a>
+	                        	<a class="btn btn-link-2" href="#">
+	                        		<i class="fa fa-google-plus"></i> Google Plus
+	                        	</a>
+                        	</div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            
+        </div>
+    			
+    			
+    			
+    			
+    			
+    			
+    		</ui:define>
+    	</ui:composition>
+    </h:body>
+</html>    

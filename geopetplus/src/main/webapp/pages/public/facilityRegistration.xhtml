@@ -39,7 +39,7 @@
     			<div class="container">
 					<div class="row">
 						<span class="pull-left"><h3><b>New Facility Registration</b></h3></span><br/><br/><span class="pull-right redtext"><i>* Please fill in all mandatory fields</i></span><br/>
-							<h:form id="RegistrationForm" styleClass="well form-horizontal">
+							<h:form id="RegistrationFrm" styleClass="well form-horizontal">
 								<fieldset>
 								 <div class="form-group">
 							        <label class="col-md-2 control-label">*Facility Name</label>
@@ -189,9 +189,9 @@
 						    			id="idButton" 
 						    			value="Submit" 
 						    			action="#{facilityDemographicsBean.saveFacilityDemographics}" 
-						    			update=":RegistrationForm:idMessage" />
+						    			update=":RegistrationFrm:idMessage" />
 						    		<p:spacer width="20px" />
-						    		<p:commandButton value="Reset" update=":RegistrationForm :RegistrationForm:idMessage" actionListener="#{facilityDemographicsBean.resetFacilityDemographics}" />
+						    		<p:commandButton value="Reset" update=":RegistrationFrm :RegistrationFrm:idMessage" actionListener="#{facilityDemographicsBean.resetFacilityDemographics}" />
 					                <p:messages id="idMessage" />
 						    		<!-- <p:messages id="idMessage" value="#{facilityDemographicsBean.message}"></p:messages> 
 						    		<b:alert id="idMessage" severity="info" closable="true" rendered="true"><strong>Alert:</strong>Insert success! </b:alert>
