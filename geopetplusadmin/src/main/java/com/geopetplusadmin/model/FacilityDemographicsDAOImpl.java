@@ -2,7 +2,6 @@ package com.geopetplusadmin.model;
 
 import java.math.BigInteger;
 
-import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
@@ -13,23 +12,20 @@ import org.springframework.transaction.annotation.Transactional;
 import com.geopetplusadmin.exception.DAOException;
 import com.geopetplusadmin.hibernate.admin.AuditDO;
 import com.geopetplusadmin.hibernate.admin.FacilityDemographicsDO;
-import com.geopetplusadmin.hibernate.admin.FacilityTermDO;
 import com.geopetplusadmin.hibernate.admin.LoginDO;
 import com.geopetplusadmin.hibernate.admin.TransactionServicesDO;
-import com.geopetplusadmin.hibernate.admin.TransactionSummaryDO;
 
 public class FacilityDemographicsDAOImpl extends HibernateDaoSupport implements FacilityDemographicsDAO {
 	
-	private final static Logger LOGGER = Logger.getLogger(FacilityDemographicsDAOImpl.class);
-	
 	@Override
 	@Transactional(readOnly = false)
-	public void saveFacilityDemographics(FacilityDemographicsDO facilityDemographicsDO) throws DAOException {
+	public String saveFacilityDemographics(FacilityDemographicsDO facilityDemographicsDO) throws DAOException {
 		try {
 	        this.getHibernateTemplate().saveOrUpdate(facilityDemographicsDO);
 		} catch(Throwable exception) {
 			throw new DAOException(exception.getMessage(), exception);
 		}
+        return "Inserted into FacilityDemographics!";
 	}
 	
 	@Override
@@ -45,24 +41,6 @@ public class FacilityDemographicsDAOImpl extends HibernateDaoSupport implements 
 	public void saveServiceInfo(TransactionServicesDO serviceDO) throws DAOException {
 		try {
 			this.getHibernateTemplate().saveOrUpdate(serviceDO);
-		} catch(Throwable exception) {
-			throw new DAOException(exception.getMessage(), exception);
-		}
-	}
-	
-	@Override
-	public void saveFacilityTermInfo(FacilityTermDO facilityTermDO) throws DAOException {
-		try {
-			this.getHibernateTemplate().saveOrUpdate(facilityTermDO);
-		} catch(Throwable exception) {
-			throw new DAOException(exception.getMessage(), exception);
-		}
-	}
-	
-	@Override
-	public void saveTransactionSummaryInfo(TransactionSummaryDO transactionSummaryDO) throws DAOException {
-		try {
-			this.getHibernateTemplate().saveOrUpdate(transactionSummaryDO);
 		} catch(Throwable exception) {
 			throw new DAOException(exception.getMessage(), exception);
 		}

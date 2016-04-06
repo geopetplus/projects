@@ -37,10 +37,8 @@
 			<list>
 				<value>com/geopetplusadmin/hibernate/admin/FacilityDemographics.hbm.xml</value>
 				<value>com/geopetplusadmin/hibernate/admin/Login.hbm.xml</value>
-				<value>com/geopetplusadmin/hibernate/admin/FacilityTerm.hbm.xml</value>
-				<value>com/geopetplusadmin/hibernate/admin/TransactionSummary.hbm.xml</value>
-				<value>com/geopetplusadmin/hibernate/admin/TransactionServices.hbm.xml</value>
 				<value>com/geopetplusadmin/hibernate/admin/Audit.hbm.xml</value>
+				<value>com/geopetplusadmin/hibernate/admin/TransactionServices.hbm.xml</value>
 			</list>
 		</property>
   	</bean>

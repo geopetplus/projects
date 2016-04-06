@@ -1,28 +1,41 @@
 package com.geopetplusadmin.domain.utility;
 
 import org.apache.commons.beanutils.BeanUtils;
-import org.apache.log4j.Logger;
 
+import com.geopetplusadmin.hibernate.admin.AuditDO;
 import com.geopetplusadmin.hibernate.admin.FacilityDemographicsDO;
+import com.geopetplusadmin.hibernate.admin.LoginDO;
+import com.geopetplusadmin.vo.AuditVO;
 import com.geopetplusadmin.vo.FacilityDemographicsVO;
+import com.geopetplusadmin.vo.LoginVO;
 
 public class TranformationUtils {
-	
-	private final static Logger LOGGER = Logger.getLogger(TranformationUtils.class);
+
+	public static LoginDO transformLoginVO(LoginVO loginVO) throws Exception {
+		LoginDO loginDO = null;
+		if (loginVO != null) {
+			loginDO = new LoginDO();
+			BeanUtils.copyProperties(loginDO, loginVO);
+		}
+		return loginDO;
+	}
 	
 	public static FacilityDemographicsDO transformFacilityDemographicsVO(FacilityDemographicsVO facilityDemographicsVO) throws Exception {
-		
-		LOGGER.info("Start TranformationUtils.java # transformFacilityDemographicsVO(FacilityDemographicsVO) method");
-		
 		FacilityDemographicsDO facilityDemographicsDO = null;
-		
 		if (facilityDemographicsVO != null) {
 			facilityDemographicsDO = new FacilityDemographicsDO();
 			BeanUtils.copyProperties(facilityDemographicsDO, facilityDemographicsVO);
 		}
-		
-		LOGGER.info("End TranformationUtils.java # transformFacilityDemographicsVO(FacilityDemographicsVO) method");
-		
 		return facilityDemographicsDO;
-	}	
+	}
+	
+	public static AuditDO transformAuditVO(AuditVO auditVO) throws Exception {
+		AuditDO auditDO = null;
+		if (auditVO != null) {
+			auditDO = new AuditDO();
+			BeanUtils.copyProperties(auditDO, auditVO);
+		}
+		return auditDO;
+	}
+	
 }

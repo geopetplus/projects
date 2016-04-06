@@ -2,28 +2,22 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.geopetplusadmin.hibernate.admin.FacilityDemographicsDO" table="FacilityDemographics">
-		<id name="facilityid" type="java.lang.String">
-			<column name="facilityid" />
+	<class name="com.geopetplusadmin.hibernate.admin.AdminDemographicsDO" table="AdminDemographics">
+		<id name="adminid" type="java.lang.String">
+			<column name="adminid" />
 			<generator class="assigned" />
 		</id>
-		<property name="facilityname" type="java.lang.String">
-			<column name="facilityname" length="50" not-null="true" />
+		<property name="adminLastName" type="java.lang.String">
+			<column name="adminLastName" length="45" not-null="true" />
 		</property>
-		<property name="contactLastName" type="java.lang.String">
-			<column name="contactLastName" length="45" not-null="true" />
-		</property>
-		<property name="contactFirstName" type="java.lang.String">
-			<column name="contactFirstName" length="45" not-null="true" />
-		</property>
-		<property name="versionid" type="java.lang.String">
-			<column name="versionid" length="4" not-null="true" />
+		<property name="adminFirstName" type="java.lang.String">
+			<column name="adminFirstName" length="45" not-null="true" />
 		</property>
 		<property name="mailAddr1" type="java.lang.String">
-			<column name="mailAddr1" length="100" not-null="true" />
+			<column name="mailAddr1" length="45" not-null="true" />
 		</property>
 		<property name="mailAddr2" type="java.lang.String">
-			<column name="mailAddr2" length="100" not-null="false" />
+			<column name="mailAddr2" length="45" not-null="false" />
 		</property>
 		<property name="mailingLocation" type="java.lang.String">
 			<column name="mailingLocation" length="45" not-null="true" />
@@ -55,17 +49,14 @@
 		<property name="billPincode" type="java.lang.String">
 			<column name="billPincode" length="10" not-null="true" />
 		</property>
-		<property name="facilityPhone" type="java.lang.String">
-			<column name="facilityPhone" length="10" not-null="true" />
+		<property name="adminPhone" type="java.lang.String">
+			<column name="adminPhone" length="10" not-null="true" />
 		</property>
-		<property name="facilityAltPhone" type="java.lang.String">
-			<column name="facilityAltPhone" length="10" not-null="false" />
+		<property name="altAdminPhone" type="java.lang.String">
+			<column name="altAdminPhone" length="10" not-null="false" />
 		</property>
-		<property name="facilyMobileNum" type="java.lang.String">
-			<column name="facilyMobileNum" length="10" not-null="true" />
-		</property>
-		<property name="facilityWhatsAppNum" type="java.lang.String">
-			<column name="facilityWhatsAppNum" length="10" not-null="true" />
+		<property name="adminMobileNum" type="java.lang.String">
+			<column name="adminMobileNum" length="10" not-null="true" />
 		</property>
 		<property name="facilityEmail1" type="java.lang.String">
 			<column name="facilityEmail1" length="50" not-null="true" />
@@ -76,10 +67,10 @@
 		<property name="facilityURL" type="java.lang.String">
 			<column name="facilityURL" length="50" not-null="false" />
 		</property>
-		<property name="facilityRegStartDate" type="java.util.Date">
+		<property name="adminRegStartDate" type="java.util.Date">
 			<column name="facilityRegStartDate" length="10" not-null="true" />
 		</property>
-		<property name="facilityRegEndDate" type="java.util.Date">
+		<property name="adminRegEndDate" type="java.util.Date">
 			<column name="facilityRegEndDate" length="10" not-null="true" />
 		</property>
 		<property name="lastUpdateDate" type="java.util.Date">

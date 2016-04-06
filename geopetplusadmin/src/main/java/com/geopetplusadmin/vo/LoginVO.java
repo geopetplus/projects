@@ -1,9 +1,8 @@
-package com.geopetplusadmin.hibernate.admin;
+package com.geopetplusadmin.vo;
 
 import java.util.Date;
-import com.geopetplusadmin.vo.FacilityDemographicsVO;
 
-public class LoginDO {
+public class LoginVO {
 	
 	private String facilityid;
 	private String versionid;
@@ -14,11 +13,9 @@ public class LoginDO {
 	private String status;
 	private String auditid;
 	
-	public LoginDO() {}
-	
-	public LoginDO(FacilityDemographicsVO facilityDemographicsVO) {}
+	public LoginVO() {}
 
-	public LoginDO(String facilityid, String versionid, String userid,
+	public LoginVO(String facilityid, String versionid, String userid,
 			String password, Date lastupdated, String role, String status,
 			String auditid) {
 		super();
@@ -94,14 +91,6 @@ public class LoginDO {
 
 	public void setAuditid(String auditid) {
 		this.auditid = auditid;
-	}
-
-	@Override
-	public String toString() {
-		return "Login [facilityid=" + facilityid + ", versionid=" + versionid
-				+ ", userid=" + userid + ", password=" + password
-				+ ", lastupdated=" + lastupdated + ", role=" + role
-				+ ", status=" + status + ", auditid=" + auditid + "]";
 	}
 	
 }

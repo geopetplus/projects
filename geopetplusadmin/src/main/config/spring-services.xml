@@ -16,8 +16,11 @@
     <bean id="facilityDemographicService" class="com.geopetplusadmin.service.FacilityDemographicsServiceImpl">
 		<property name="FacilityDemographicsDAO" ref="FacilityDemographicsDAO" />
 	</bean>
-	<bean id="adminConsoleService" class="com.geopetplusadmin.service.AdminConsoleServiceImpl">
-		<property name="AdminConsoleDAO" ref="AdminConsoleDAO" />
+	<bean id="loginService" class="com.geopetplusadmin.service.LoginServiceImpl">
+		<property name="LoginDAO" ref="LoginDAO" />
 	</bean>
-	
+	<bean id="auditService" class="com.geopetplusadmin.service.AuditServiceImpl">
+		<property name="AuditDAO" ref="AuditDAO" />
+	</bean>
+
 </beans>

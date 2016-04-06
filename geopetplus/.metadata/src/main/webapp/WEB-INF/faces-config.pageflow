@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14578164906640" configfile="/geopetplus/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="facilityRegistration.xhtml" id="pf14578167078047" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14578167078048 pf145781727431610" path="facilityRegistration.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf14578167078049" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14578167078048 pf145781727431610" path="index.xhtml"/>
-  <links id="pf14578167078048" target="pf14578167078049" source="pf14578167078047" outcome="success" fromaction="#{facilityDemographicsBean.insertStatus}"/>
-  <links id="pf145781727431610" target="pf14578167078049" source="pf14578167078047" outcome="failure" fromaction="#{facilityDemographicsBean.insertStatus}"/>
-</pageflow:Pageflow>

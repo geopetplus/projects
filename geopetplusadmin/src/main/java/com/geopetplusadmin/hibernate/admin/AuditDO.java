@@ -1,13 +1,8 @@
 package com.geopetplusadmin.hibernate.admin;
 
-import java.io.Serializable;
 import java.util.Date;
 
-import org.apache.log4j.Logger;
-
-public class AuditDO implements Serializable {
-	
-	private final static Logger LOGGER = Logger.getLogger(AuditDO.class);
+public class AuditDO {
 	
 	private String auditId;
 	private String typeofrequest;
