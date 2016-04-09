@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+    <h:head>
+    	<title>Java Server Faces - PrimeFaces Template</title>
+    </h:head>
+    <h:body>
+    	<ui:composition template="/pages/templates/template.xhtml">
+    	
+    		<ui:define name="content">
+    		
+    			<h:form id="treeForm">
+    				
+    				<p:outputLabel value="Tree No: " />
+		    		<p:inputText id="idTreeNo" value="#{treeBean.treeVO.treeNo}" />
+		    		<br/>
+		    		<p:outputLabel value="Tree Name: " />
+		    		<p:inputText id="idTreeName" value="#{treeBean.treeVO.treeName}" />
+		    		<br/>
+		    		<p:outputLabel value="Plant: " />
+		    		<p:selectBooleanCheckbox id="idPlant" value="#{treeBean.treeVO.plant}" />
+		    		<p:commandButton 
+		    			id="idButton" 
+		    			value="GET" 
+		    			action="#{treeBean.saveTree}" 
+		    			update=":treeForm:idTreeNo :treeForm:idTreeName" />
+		    		<br/>
+    			</h:form>	
+    			
+    		</ui:define>
+    		
+    	</ui:composition>
+    </h:body>
+</html>    
