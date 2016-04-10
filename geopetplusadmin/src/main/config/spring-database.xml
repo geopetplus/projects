@@ -17,12 +17,19 @@
     	<property name="location" value="classpath:/geopet-db.properties" />
   	</bean>
     
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <!-- Normal Database Connection -->
+    <!-- Use this for JUnits testcases and comment the JNDI database connection -->
+    <!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
     	<property name="driverClassName" value="${db.driver}" />
     	<property name="url" value="${db.url}" />
     	<property name="username" value="${db.username}" />
     	<property name="password" value="${db.password}" />
-  	</bean>
+  	</bean> -->
+  	
+  	<!-- JNDI Database Connection -->
+  	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+    	<property name="jndiName" value="${jndi.db.url}"/>
+	</bean>
   	
   	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
     	<property name="dataSource" ref="dataSource"></property>
