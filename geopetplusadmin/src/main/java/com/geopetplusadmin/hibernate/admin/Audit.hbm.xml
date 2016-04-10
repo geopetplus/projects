@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.geopetplusadmin.hibernate.admin.AuditDO" table="Audit">
+		<id name="auditId" type="java.lang.String">
+			<column name="auditId" />
+			<generator class="assigned" />
+		</id>
+		<property name="typeofrequest" type="java.lang.String">
+			<column name="typeofrequest" length="200" not-null="true" />
+		</property>
+		<property name="transaction" type="java.lang.String">
+			<column name="transaction" length="200" not-null="true" />
+		</property>
+		<property name="adminid" type="java.lang.String">
+			<column name="adminid" length="11" not-null="true" />
+		</property>
+		<property name="requestchannel" type="java.lang.String">
+			<column name="requestchannel" length="10" not-null="true" />
+		</property>
+		<property name="useragent" type="java.lang.String">
+			<column name="useragent" length="200" not-null="true" />
+		</property>
+		<property name="facilityid" type="java.lang.String">
+			<column name="facilityid" length="11" not-null="true" />
+		</property>
+		<property name="requestdate" type="java.util.Date">
+			<column name="requestdate" not-null="true" />
+		</property>		
+	</class>
+</hibernate-mapping>

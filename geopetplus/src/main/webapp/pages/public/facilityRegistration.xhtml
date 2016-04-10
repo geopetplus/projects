@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:b="http://bootsfaces.net/ui">
+    
+    <h:head>
+    	<f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />		
+            <title>GeoPetPLUS Home</title>
+        </f:facet>
+    </h:head>
+     
+    <h:body style="padding-top: 50px; padding-bottom: 20px;">
+    	<ui:composition template="/pages/templates/template.xhtml">
+    		<ui:define name="content">
+    			
+		    	<h:outputStylesheet name="bootstrap.css" library="css" />
+		    	<h:outputStylesheet name="animate.css" library="css" />
+		    	<h:outputStylesheet name="carousel.css" library="css" />
+		    	<h:outputStylesheet name="scrollingNav.css" library="css" />
+		    	<h:outputStylesheet name="custom.css" library="css" />
+    			
+    			<h:outputScript name="bootstrap.js" library="js" />
+		        <h:outputScript name="html5shiv.js" library="js" />
+		        <h:outputScript name="jquery.easing.min.js" library="js" />
+		        <h:outputScript name="jquery.i18n.properties-min-1.0.9.js" library="js" />
+		        <h:outputScript name="jquery-1.11.2.js" library="js" />
+		        <h:outputScript name="holder.js" library="js" />
+		        <h:outputScript name="scrollingNav.js" library="js" />
+		        <h:outputScript name="npm.js" library="js" />
+		        <h:outputScript name="wow.js" library="js" />
+		        <h:outputScript name="wow-min.js" library="js" />
+        
+    			<div class="container">
+					<div class="row">
+						<span class="pull-left"><h3><b>New Facility Registration</b></h3></span><br/><br/><span class="pull-right redtext"><i>* Please fill in all mandatory fields</i></span><br/>
+							<h:form id="RegistrationFrm" styleClass="well form-horizontal">
+								<fieldset>
+								 <div class="form-group">
+							        <label class="col-md-2 control-label">*Facility Name</label>
+							        <div class="col-md-4 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText id="facilityname" autofocus="on" placeholder="Official Name" styleClass="form-control" required="true" value="#{facilityDemographicsBean.facilityDemographicsVO.facilityname}" />
+							          </div>
+							        </div>
+						        </div>
+						        
+						        <div class="form-group">
+							        <label class="col-md-2 control-label">*Owner First Name</label>
+							        <div class="col-md-4 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText id="contactLastName" placeholder="Owner First Name" styleClass="form-control" required="true" value="#{facilityDemographicsBean.facilityDemographicsVO.contactLastName}" />
+							          </div>
+							        </div>
+						        	<label class="col-md-2 control-label">*Owner Last Name</label>
+							        <div class="col-md-4 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText id="contactFirstName" placeholder="Owner Last Name" styleClass="form-control" required="true" value="#{facilityDemographicsBean.facilityDemographicsVO.contactFirstName}" />
+							          </div>
+							        </div>
+						        </div>
+						        
+						        <div class="form-group">
+							        <label class="col-md-2 control-label">*Mailing Address 1</label>
+							        <div class="col-md-10 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText id="mailAddr1" placeholder="Mailing Address 1" styleClass="form-control" required="true" value="#{facilityDemographicsBean.facilityDemographicsVO.mailAddr1}" />
+							          </div>
+							        </div>
+							   </div>
+							   <div class="form-group">
+							        <label class="col-md-2 control-label">*Mailing Address 2</label>
+							        <div class="col-md-10 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText id="mailAddr2" placeholder="Mailing Address 2" styleClass="form-control" required="true" value="#{facilityDemographicsBean.facilityDemographicsVO.mailAddr2}" />
+							          </div>
+							        </div>
+							   </div>
+							   <div class="form-group">
+							        <label class="col-md-2 control-label">*Mailing Location</label>
+							        <div class="col-md-10 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText id="mailingLocation" placeholder="Mailing Location" styleClass="form-control" required="true" value="#{facilityDemographicsBean.facilityDemographicsVO.mailingLocation}" />
+							          </div>
+							        </div>
+							   </div>
+						        <div class="form-group">
+							        <label class="col-md-2 control-label">*Mailing City</label>
+							        <div class="col-md-3 textfieldGroupContainer">
+							          <div class="textfield-group">
+							            <p:inputText id="mailingCity" placeholder="Mailing City" styleClass="form-control" required="true" value="#{facilityDemographicsBean.facilityDemographicsVO.mailingCity}" />
+							          </div>
+							        </div>
+						        	<label class="col-md-1 control-label">*State</label>
+							        <div class="col-md-3 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText id="mailingState" placeholder="Mailing State" styleClass="form-control" required="true" value="#{facilityDemographicsBean.facilityDemographicsVO.mailingState}" />
+							          </div>
+							        </div>
+							        <label class="col-md-1 control-label">*PinCode</label>
+							        <div class="col-md-2 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText id="mailingPincode" type="Mailing zip" pattern="\d{6}" placeholder="6 digits, no space" styleClass="form-control" required="true" value="#{facilityDemographicsBean.facilityDemographicsVO.mailingPincode}" />
+							          </div>
+							        </div>
+						        </div>
+								<div class="form-group">
+							        <p:selectBooleanCheckbox id="sameAddress" value="#{facilityDemographicsBean.facilityDemographicsVO.sameAddress}" />
+							        <label class="col-md-4 control-label">*Is Mailing address same as billing address</label>
+							    </div>
+								<div class="form-group">
+							        <label class="col-md-2 control-label">*Primary Email</label>
+							        <div class="col-md-4 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText id="facilityEmail1" type="email" placeholder="valid email address" styleClass="form-control"  required="true" value="#{facilityDemographicsBean.facilityDemographicsVO.facilityEmail1}" />
+							          </div>
+							        </div>
+							        <label class="col-md-2 control-label">Secondary Email</label>
+							        <div class="col-md-4 textfieldGroupContainer">
+							          <div class="textfield-group">
+							            <p:inputText id="facilityEmail2" type="email" placeholder="valid email address" styleClass="form-control" value="#{facilityDemographicsBean.facilityDemographicsVO.facilityEmail2}" />
+							          </div>
+							        </div>
+						        </div>
+					
+						      <div class="form-group">
+							        <label class="col-md-2 control-label">*Primary Contact</label>
+							        <div class="col-md-4 textfieldGroupContainer">
+							          <div class="textfield-group">
+							            <p:inputText id="facilityPhone" type="tel" pattern="\d{10}" placeholder="10 digits, no space" styleClass="form-control"  required="true" value="#{facilityDemographicsBean.facilityDemographicsVO.facilityPhone}" />
+							          </div>
+							        </div>
+						        	<label class="col-md-2 control-label">Secondary Contact</label>
+							        <div class="col-md-4 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText id="facilityAltPhone" type="tel" pattern="\d{10}" placeholder="10 digits, no space" styleClass="form-control" value="#{facilityDemographicsBean.facilityDemographicsVO.facilityAltPhone}" />
+							          </div>
+							        </div>
+						        </div>
+					
+						      <div class="form-group">
+							        <label class="col-md-2 control-label">*Mobile</label>
+							        <div class="col-md-4 textfieldGroupContainer">
+							          <div class="textfield-group">
+							            <p:inputText id="facilyMobileNum" type="tel" pattern="\d{10}" placeholder="10 digits, no space" required="true" styleClass="form-control" value="#{facilityDemographicsBean.facilityDemographicsVO.facilyMobileNum}" />
+							          </div>
+							        </div>
+						     	
+						     	  <label class="col-md-2 control-label">*Whatsapp</label>
+							        <div class="col-md-4 textfieldGroupContainer">
+							          <div class="textfield-group">
+							            <p:inputText id="facilityWhatsAppNum" type="tel" pattern="\d{10}" placeholder="10 digits, no space" styleClass="form-control" required="true" value="#{facilityDemographicsBean.facilityDemographicsVO.facilityWhatsAppNum}" />
+							          </div>
+							        </div>
+						      </div>
+						      <div class="form-group">
+							        <label class="col-md-2 control-label">Facility URL</label>
+							        <div class="col-md-4 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText id="facilityURL" placeholder="facility URL" styleClass="form-control" value="#{facilityDemographicsBean.facilityDemographicsVO.facilityURL}" />
+							          </div>
+							        </div>
+						        </div>
+					
+						      <div class="form-group">
+							        <label class="col-md-2 control-label">*Services</label>
+							        <div class="col-md-10 textfieldGroupContainer">
+							          <div class="textfield-group">
+							            <p:selectManyCheckbox value="#{facilityDemographicsBean.facilityDemographicsVO.services}" id="services" labelposition="inline" required="true">
+										   	<f:selectItem itemValue="Clinical" itemLabel="&nbsp;Clinical&nbsp;&nbsp;&nbsp;" />
+										   	<f:selectItem itemValue="Laboratory" itemLabel="&nbsp;Laboratory&nbsp;&nbsp;&nbsp;" />
+										   	<f:selectItem itemValue="PetStores" itemLabel="&nbsp;Pet Stores&nbsp;&nbsp;&nbsp;" />
+										   	<f:selectItem itemValue="BreedersHub" itemLabel="&nbsp;Breeders Hub&nbsp;&nbsp;&nbsp;" />
+										</p:selectManyCheckbox>
+							          </div>
+							        </div>
+						      </div>
+						      
+								<div class="form-group">
+						        <label class="col-md-4 control-label"></label>
+						        <div class="col-md-4">
+						        	
+						    		<p:commandButton 
+						    			id="idButton" 
+						    			value="Submit" 
+						    			action="#{facilityDemographicsBean.saveFacilityDemographics}" 
+						    			update=":RegistrationFrm:idMessage" />
+						    		<p:spacer width="20px" />
+						    		<p:commandButton value="Reset" update=":RegistrationFrm :RegistrationFrm:idMessage" actionListener="#{facilityDemographicsBean.resetFacilityDemographics}" />
+					                <p:messages id="idMessage" />
+						    		<!-- <p:messages id="idMessage" value="#{facilityDemographicsBean.message}"></p:messages> 
+						    		<b:alert id="idMessage" severity="info" closable="true" rendered="true"><strong>Alert:</strong>Insert success! </b:alert>
+									-->
+						        </div>
+						      </div>
+							</fieldset>
+						  </h:form>
+					</div>
+				</div>
+    			
+    		</ui:define>
+    	</ui:composition>
+    </h:body>
+</html>    

@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:b="http://bootsfaces.net/ui">
+    
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />		
+            <title>GeoPetPLUS Home</title>
+        </f:facet>
+    </h:head>
+     
+    <h:body style="padding-top: 50px; padding-bottom: 20px;">
+    	<h:outputStylesheet name="bootstrap.css" library="css" />
+    	<h:outputStylesheet name="animate.css" library="css" />
+    	<h:outputStylesheet name="carousel.css" library="css" />
+    	<h:outputStylesheet name="scrollingNav.css" library="css" />
+    	<h:outputStylesheet name="custom.css" library="css" />
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" /> -->
+        <h:outputScript name="bootstrap.js" library="js" />
+        <h:outputScript name="html5shiv.js" library="js" />
+        <h:outputScript name="jquery.easing.min.js" library="js" />
+        <h:outputScript name="jquery.i18n.properties-min-1.0.9.js" library="js" />
+        <h:outputScript name="jquery-1.11.2.js" library="js" />
+        <h:outputScript name="holder.js" library="js" />
+        <h:outputScript name="scrollingNav.js" library="js" />
+        <h:outputScript name="npm.js" library="js" />
+        <h:outputScript name="wow.js" library="js" />
+        <h:outputScript name="wow-min.js" library="js" />
+		
+    	<ui:composition template="/pages/templates/template.xhtml">
+    		<ui:define name="content">
+    			
+    			<h:form id="helloForm">
+    				<!-- <p:commandButton 
+		    			id="idButton" 
+		    			value="GET" 
+		    			action="#{helloBean.getAllReportTypes}" 
+		    			update=":helloForm:idMessage" />
+		    		<p:spacer width="20px" /> 	
+		    		<p:inputText id="idMessage" value="#{helloBean.message}" /> -->
+		    			    		
+    			</h:form>
+    			
+    			
+				<div class="container">
+					<div class="row">
+						<span class="pull-left"><h3><b>Admin Registration</b></h3></span><br/><br/><span class="pull-right redtext"><i>* Please fill in all mandatory fields</i></span><br/>
+							<h:form id="RegistrationForm" styleClass="well form-horizontal">
+								<fieldset>
+								 <div class="form-group">
+							        <label class="col-md-2 control-label">*Admin First Name</label>
+							        <div class="col-md-4 textfieldGroupContainer">
+							          <div class="textfield-group">
+							            <p:inputText name="adminFirstName" autofocus="on" placeholder="First Name" styleClass="form-control" required="true"/>
+							          </div>
+							        </div>
+						        	<label class="col-md-2 control-label">*Admin Last Name</label>
+							        <div class="col-md-4 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText name="adminLastName" placeholder="Last Name" styleClass="form-control" required="true"/>
+							          </div>
+							        </div>
+						        </div>
+						        
+						        <div class="form-group">
+							        <label class="col-md-2 control-label">*Admin Address 1</label>
+							        <div class="col-md-10 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText name="address1" placeholder="Address detail" styleClass="form-control" required="true"/>
+							          </div>
+							        </div>
+							   </div>
+							      <div class="form-group">
+							        <label class="col-md-2 control-label">Admin Address 2</label>
+							        <div class="col-md-10 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText name="address2" placeholder="Address detail" styleClass="form-control"/>
+							          </div>
+							        </div>
+							   </div>
+							   
+						        <div class="form-group">
+							        <label class="col-md-2 control-label">*City</label>
+							        <div class="col-md-3 textfieldGroupContainer">
+							          <div class="textfield-group">
+							            <p:inputText name="city" placeholder="City" styleClass="form-control" required="true"/>
+							          </div>
+							        </div>
+						        	<label class="col-md-1 control-label">*State</label>
+							        <div class="col-md-3 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText name="state" placeholder="State" styleClass="form-control" required="true"/>
+							          </div>
+							        </div>
+							        <label class="col-md-1 control-label">*Zip / Pincode</label>
+							        <div class="col-md-2 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText name="pincode" type="zip" pattern="\d{6}" placeholder="6 digits, no space" styleClass="form-control" required="true"/>
+							          </div>
+							        </div>
+						        </div>
+				
+						      <div class="form-group">
+							        <label class="col-md-2 control-label">*Primary Contact</label>
+							        <div class="col-md-4 textfieldGroupContainer">
+							          <div class="textfield-group">
+							            <p:inputText name="primarycontact" type="tel" pattern="\d{10}" placeholder="10 digits, no space" styleClass="form-control"  required="true"/>
+							          </div>
+							        </div>
+						        	<label class="col-md-2 control-label">Secondary Contact</label>
+							        <div class="col-md-4 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText name="altcontact" type="tel" pattern="\d{10}" placeholder="10 digits, no space" styleClass="form-control"/>
+							          </div>
+							        </div>
+						        </div>
+					
+						      <div class="form-group">
+							        <label class="col-md-2 control-label">Mobile Number</label>
+							        <div class="col-md-4 textfieldGroupContainer">
+							          <div class="textfield-group">
+							            <p:inputText name="mobilecontact" type="tel" pattern="\d{10}" placeholder="10 digits, no space" styleClass="form-control"/>
+							          </div>
+							        </div>
+						     	
+						      </div>
+						      
+						      <div class="form-group">
+							        <label class="col-md-2 control-label">*Email</label>
+							        <div class="col-md-4 textfieldGroupContainer">
+							          <div class="textfield-group">
+							          	<p:inputText name="emailid" type="email" placeholder="valid email address" styleClass="form-control"  required="true"/>
+							          </div>
+							        </div>
+							        
+						        </div>
+					
+								<div class="form-group">
+						        <label class="col-md-4 control-label"></label>
+						        <div class="col-md-4">
+						        	
+					       	      <!-- <h:commandButton type="reset" class="btn btn-primary" value="Reset"/> -->
+						         <!--  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; update=":RegistrationForm:idMessage1" -->
+									
+									
+						    		<p:commandButton 
+						    			id="idButton" 
+						    			value="Submit" 
+						    			action="#{loginBean.insertLoginStatus}" 
+						    			update=":RegistrationForm:idMessage" />
+						    		<p:spacer width="20px" /> 	
+						    		<p:inputText id="idMessage" value="#{loginBean.message}" />
+						    		
+						        </div>
+						      </div>
+							</fieldset>
+						  </h:form>
+					</div>
+				</div>
+	
+    		</ui:define>
+    	</ui:composition>
+    </h:body>
+</html>    
