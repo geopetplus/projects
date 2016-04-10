@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+    
+    xmlns:m="http://primefaces.org/mobile">
+    
+    <h:head>
+    	<f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />		
+            <title>GeoPetPLUS - Admin Console</title>
+        </f:facet>
+    </h:head>
+     
+    <h:body style="padding-top: 50px; padding-bottom: 20px;">
+    	<ui:composition template="/pages/templates/template.xhtml">
+    		<ui:define name="content">
+    			
+		    	<h:outputStylesheet name="bootstrap.css" library="css" />
+		    	<h:outputStylesheet name="animate.css" library="css" />
+		    	<h:outputStylesheet name="carousel.css" library="css" />
+		    	<h:outputStylesheet name="scrollingNav.css" library="css" />
+		    	<h:outputStylesheet name="custom.css" library="css" />
+    			
+    			<h:outputScript name="bootstrap.js" library="js" />
+		        <h:outputScript name="html5shiv.js" library="js" />
+		        <h:outputScript name="jquery.easing.min.js" library="js" />
+		        <h:outputScript name="jquery.i18n.properties-min-1.0.9.js" library="js" />
+		        <h:outputScript name="jquery-1.11.2.js" library="js" />
+		        <h:outputScript name="holder.js" library="js" />
+		        <h:outputScript name="scrollingNav.js" library="js" />
+		        <h:outputScript name="npm.js" library="js" />
+		        <h:outputScript name="wow.js" library="js" />
+		        <h:outputScript name="wow-min.js" library="js" />
+        
+    			<div class="container-fluid">
+				  <div class="row content">
+				    <div class="col-sm-2 sidenav">
+				      <h4>&nbsp;</h4>
+				      <ul class="nav nav-pills nav-stacked">
+				        <li class="active"><a href="#{request.contextPath}/pages/admin/adminConsole.xhtml">Pending Facilities</a></li>
+				        <li><a href="#active">Active Facilities</a></li>
+				        <li><a href="#deactivate">Deactivate Facilities</a></li>
+				        <li><a href="#new">New Facilities</a></li>
+				      </ul>
+				      </div>
+				  
+	    			<div class="col-sm-9"><br/>
+				      	<!-- Start Pending Facilities data table value="#{facilityDemographicsBean.facilityDemographicsVO.facilityname}"-->
+						<h:form id="adminConsoleFrm" styleClass="form-horizontal">
+							<p:dataTable var="facilities" value="#{adminConsoleBean.pendingFacilities}" widgetVar="facilitiesTable"
+						                 emptyMessage="No facility found with given criteria" filteredValue="#{adminConsoleBean.filteredfacilities}">
+						        <f:facet name="header">
+						            <h4><b>Approve Pending Facilities</b></h4>
+						        </f:facet>
+								
+								<p:column filterBy="#{facilities.facilityid}" headerText="ID" filterMatchMode="contains">
+						            <h:commandLink action="#{adminConsoleBean.loadFacilityInfo}" value="#{facilities.facilityid}">
+										<f:param name="facilityid" value="#{facilities.facilityid}" />
+									</h:commandLink>
+						        </p:column>
+						        <p:column filterBy="#{facilities.facilityname}" headerText="Name" filterMatchMode="contains">
+						            <h:outputText value="#{facilities.facilityname}" />
+						        </p:column>
+						        <p:column filterBy="#{facilities.mailingLocation}" headerText="Location" filterMatchMode="contains">
+						            <h:outputText value="#{facilities.mailingLocation}" />
+						        </p:column>
+						        <p:column filterBy="#{facilities.mailingState}" headerText="State" filterMatchMode="contains">
+						            <h:outputText value="#{facilities.mailingState}" />
+						        </p:column>
+						        <p:column filterBy="#{facilities.facilyMobileNum}" headerText="Phone" filterMatchMode="contains">
+						            <h:outputText value="#{facilities.facilyMobileNum}" />
+						        </p:column>
+						 
+						    </p:dataTable>
+						</h:form>
+						
+						<!-- End Pending Facilities data table -->
+				      <br/>
+				   </div>
+				</div>
+    		</div>
+    			
+    		</ui:define>
+    	</ui:composition>
+    </h:body>
+</html>    

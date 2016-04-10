@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.geopetplusadmin.hibernate.admin.TransactionServicesDO" table="TransactionServices">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="increment" />
+		</id>
+		<property name="facilityid" type="java.lang.String">
+			<column name="facilityid" length="11" not-null="true" />
+		</property>
+		<property name="policyid" type="java.lang.String">
+			<column name="policyid" length="11" not-null="true" />
+		</property>
+		<property name="termid" type="java.lang.String">
+			<column name="termid" length="6" not-null="true" />
+		</property>
+		<property name="transactionseqnbr" type="java.lang.String">
+			<column name="transactionseqnbr" length="11" not-null="true" />
+		</property>
+		<property name="serviceid" type="java.lang.String">
+			<column name="serviceid" length="4" not-null="true" />
+		</property>
+		<property name="serviceseqnbr" type="java.lang.String">
+			<column name="serviceseqnbr" length="11"  not-null="true" />
+		</property>
+		<property name="servicesubplantype" type="java.lang.String">
+			<column name="servicesubplantype" length="10"  not-null="true"/>
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" length="3"  not-null="true"/>
+		</property>
+		<property name="serviceeffectivedate" type="java.util.Date">
+			<column name="serviceeffectivedate" not-null="true" />
+		</property>
+		<property name="serviceenddate" type="java.util.Date">
+			<column name="serviceenddate" not-null="true" />
+		</property>
+		<property name="serviceoriginalamt" type="int">
+			<column name="serviceoriginalamt" length="10" not-null="true" />
+		</property>
+		<property name="servicediscountcode" type="int">
+			<column name="servicediscountcode" length="6" />
+		</property>
+		<property name="servicediscountamt" type="int">
+			<column name="servicediscountamt" length="10" />
+		</property>
+		<property name="servicefinalamt" type="int">
+			<column name="servicefinalamt" length="10" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+    
+    xmlns:m="http://primefaces.org/mobile">
+    
+    <h:head>
+    	<f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />		
+            <title>GeoPetPLUS - Admin Transactions</title>
+        </f:facet>
+    </h:head>
+     
+    <h:body style="padding-top: 50px; padding-bottom: 20px;">
+    	<ui:composition template="/pages/templates/template.xhtml">
+    		<ui:define name="content">
+    			
+		    	<h:outputStylesheet name="bootstrap.css" library="css" />
+		    	<h:outputStylesheet name="animate.css" library="css" />
+		    	<h:outputStylesheet name="carousel.css" library="css" />
+		    	<h:outputStylesheet name="scrollingNav.css" library="css" />
+		    	<h:outputStylesheet name="custom.css" library="css" />
+    			
+    			<h:outputScript name="bootstrap.js" library="js" />
+		        <h:outputScript name="html5shiv.js" library="js" />
+		        <h:outputScript name="jquery.easing.min.js" library="js" />
+		        <h:outputScript name="jquery.i18n.properties-min-1.0.9.js" library="js" />
+		        <h:outputScript name="jquery-1.11.2.js" library="js" />
+		        <h:outputScript name="holder.js" library="js" />
+		        <h:outputScript name="scrollingNav.js" library="js" />
+		        <h:outputScript name="npm.js" library="js" />
+		        <h:outputScript name="wow.js" library="js" />
+		        <h:outputScript name="wow-min.js" library="js" />
+        
+    			<div class="container-fluid">
+				  <div class="row content">
+				    <div class="col-sm-2 sidenav">
+				      <h4>&nbsp;</h4>
+				      <ul class="nav nav-pills nav-stacked">
+				        <li class="active"><a href="#{request.contextPath}/pages/admin/adminTransaction.xhtml">Pending Facilities</a></li>
+				        <li><a href="#active">Active Facilities</a></li>
+				        <li><a href="#deactivate">Deactivate Facilities</a></li>
+				        <li><a href="#new">New Facilities</a></li>
+				      </ul>
+				      </div>
+				  
+	    			<div class="col-sm-9"><br/>
+				      	<h:form id="adminConsoleFrm">
+							
+						<p:growl id="growl" sticky="true" showDetail="true"/> 
+					    <p:wizard>
+					        <p:tab id="demographics" title="Demographics">
+					            <p:panel header="Demographic Details for #{adminConsoleBean.facilityDemographicsVO.facilityid}">
+					               <h:panelGrid columns="4" styleClass="well form-horizontal">
+					                	
+					                	<fieldset>
+											 <div class="form-group">
+										        <label class="col-md-2 control-label">Facility Name</label>
+										        <div class="col-md-4 textfieldGroupContainer">
+										          <div class="textfield-group">
+										          	<p:inputText readonly="true" id="facilityname" placeholder="Official Name" styleClass="form-control" required="true" value="#{adminConsoleBean.facilityDemographicsVO.facilityid}" />
+										          </div>
+										        </div>
+									        </div>
+									        
+									     <div class="form-group">
+									        <label class="col-md-2 control-label">*Owner First Name</label>
+									        <div class="col-md-4 textfieldGroupContainer">
+									          <div class="textfield-group">
+									          	<p:inputText id="contactFirstName" placeholder="Owner First Name" styleClass="form-control" required="true" value="#{adminConsoleBean.facilityDemographicsVO.contactFirstName}" />
+									          </div>
+									        </div>
+								        	<label class="col-md-2 control-label">*Owner Last Name</label>
+									        <div class="col-md-4 textfieldGroupContainer">
+									          <div class="textfield-group">
+									          	<p:inputText id="contactLastName" placeholder="Owner Last Name" styleClass="form-control" required="true" value="#{adminConsoleBean.facilityDemographicsVO.contactLastName}" />
+									          </div>
+									        </div>
+								        </div>
+								        
+								        <div class="form-group">
+									        <label class="col-md-2 control-label">*Mailing Address 1</label>
+									        <div class="col-md-10 textfieldGroupContainer">
+									          <div class="textfield-group">
+									          	<p:inputText id="mailAddr1" placeholder="Mailing Address 1" styleClass="form-control" required="true" value="#{adminConsoleBean.facilityDemographicsVO.mailAddr1}" />
+									          </div>
+									        </div>
+									   </div>
+									   <div class="form-group">
+									        <label class="col-md-2 control-label">*Mailing Address 2</label>
+									        <div class="col-md-10 textfieldGroupContainer">
+									          <div class="textfield-group">
+									          	<p:inputText id="mailAddr2" placeholder="Mailing Address 2" styleClass="form-control" required="true" value="#{adminConsoleBean.facilityDemographicsVO.mailAddr2}" />
+									          </div>
+									        </div>
+									   </div>
+									   <div class="form-group">
+									        <label class="col-md-2 control-label">*Mailing Location</label>
+									        <div class="col-md-10 textfieldGroupContainer">
+									          <div class="textfield-group">
+									          	<p:inputText id="mailingLocation" placeholder="Mailing Location" styleClass="form-control" required="true" value="#{adminConsoleBean.facilityDemographicsVO.mailingLocation}" />
+									          </div>
+									        </div>
+									   </div>
+								        <div class="form-group">
+									        <label class="col-md-2 control-label">*Mailing City</label>
+									        <div class="col-md-3 textfieldGroupContainer">
+									          <div class="textfield-group">
+									            <p:inputText id="mailingCity" placeholder="Mailing City" styleClass="form-control" required="true" value="#{adminConsoleBean.facilityDemographicsVO.mailingCity}" />
+									          </div>
+									        </div>
+								        	<label class="col-md-1 control-label">*State</label>
+									        <div class="col-md-3 textfieldGroupContainer">
+									          <div class="textfield-group">
+									          	<p:inputText id="mailingState" placeholder="Mailing State" styleClass="form-control" required="true" value="#{adminConsoleBean.facilityDemographicsVO.mailingState}" />
+									          </div>
+									        </div>
+									        <label class="col-md-1 control-label">*PinCode</label>
+									        <div class="col-md-2 textfieldGroupContainer">
+									          <div class="textfield-group">
+									          	<p:inputText id="mailingPincode" type="Mailing zip" pattern="\d{6}" placeholder="6 digits, no space" styleClass="form-control" required="true" value="#{adminConsoleBean.facilityDemographicsVO.mailingPincode}" />
+									          </div>
+									        </div>
+								        </div>
+										<div class="form-group">
+									        <label class="col-md-2 control-label">*Primary Email</label>
+									        <div class="col-md-4 textfieldGroupContainer">
+									          <div class="textfield-group">
+									          	<p:inputText id="facilityEmail1" type="email" placeholder="valid email address" styleClass="form-control"  required="true" value="#{adminConsoleBean.facilityDemographicsVO.facilityEmail1}" />
+									          </div>
+									        </div>
+									        <label class="col-md-2 control-label">Secondary Email</label>
+									        <div class="col-md-4 textfieldGroupContainer">
+									          <div class="textfield-group">
+									            <p:inputText id="facilityEmail2" type="email" placeholder="valid email address" styleClass="form-control" value="#{adminConsoleBean.facilityDemographicsVO.facilityEmail2}" />
+									          </div>
+									        </div>
+								        </div>
+							
+								      <div class="form-group">
+									        <label class="col-md-2 control-label">*Primary Contact</label>
+									        <div class="col-md-4 textfieldGroupContainer">
+									          <div class="textfield-group">
+									            <p:inputText id="facilityPhone" type="tel" pattern="\d{10}" placeholder="10 digits, no space" styleClass="form-control"  required="true" value="#{adminConsoleBean.facilityDemographicsVO.facilityPhone}" />
+									          </div>
+									        </div>
+								        	<label class="col-md-2 control-label">Secondary Contact</label>
+									        <div class="col-md-4 textfieldGroupContainer">
+									          <div class="textfield-group">
+									          	<p:inputText id="facilityAltPhone" type="tel" pattern="\d{10}" placeholder="10 digits, no space" styleClass="form-control" value="#{adminConsoleBean.facilityDemographicsVO.facilityAltPhone}" />
+									          </div>
+									        </div>
+								        </div>
+							
+								      <div class="form-group">
+									        <label class="col-md-2 control-label">*Mobile</label>
+									        <div class="col-md-4 textfieldGroupContainer">
+									          <div class="textfield-group">
+									            <p:inputText id="facilyMobileNum" type="tel" pattern="\d{10}" placeholder="10 digits, no space" required="true" styleClass="form-control" value="#{adminConsoleBean.facilityDemographicsVO.facilyMobileNum}" />
+									          </div>
+									        </div>
+								     	
+								     	  <label class="col-md-2 control-label">*Whatsapp</label>
+									        <div class="col-md-4 textfieldGroupContainer">
+									          <div class="textfield-group">
+									            <p:inputText id="facilityWhatsAppNum" type="tel" pattern="\d{10}" placeholder="10 digits, no space" styleClass="form-control" required="true" value="#{adminConsoleBean.facilityDemographicsVO.facilityWhatsAppNum}" />
+									          </div>
+									        </div>
+								      </div>
+								      <div class="form-group">
+									        <label class="col-md-2 control-label">Facility URL</label>
+									        <div class="col-md-4 textfieldGroupContainer">
+									          <div class="textfield-group">
+									          	<p:inputText id="facilityURL" placeholder="facility URL" styleClass="form-control" value="#{adminConsoleBean.facilityDemographicsVO.facilityURL}" />
+									          </div>
+									        </div>
+								        </div>
+									        
+						        		</fieldset>
+					                	
+					                	<h:outputText value="Skip to last: " />
+					                    <h:selectBooleanCheckbox value="" />
+					                </h:panelGrid>
+					            </p:panel>
+					        </p:tab>
+					        
+					        <p:tab id="services" title="Services">
+					            <p:panel header="Service Details for #{adminConsoleBean.facilityInfo.get(0).getFacilityid()}">
+					               <h:panelGrid columns="4" styleClass="well form-horizontal">
+					                	
+					                	<fieldset>
+											 <div class="form-group">
+										        <label class="col-md-2 control-label">Facility Name</label>
+										        <div class="col-md-4 textfieldGroupContainer">
+										          <div class="textfield-group">
+										          	<!-- <p:inputText readonly="true" id="facilityname" placeholder="Official Name" styleClass="form-control" required="true" value="#{adminConsoleBean.facilityInfo.get(0).getFacilityid()}" /> -->
+										          </div>
+										        </div>
+									        </div>
+									        
+									     <div class="form-group">
+									        <label class="col-md-2 control-label">*Owner First Name</label>
+									        <div class="col-md-4 textfieldGroupContainer">
+									          <div class="textfield-group">
+									          	<!-- <p:inputText id="contactFirstName" placeholder="Owner First Name" styleClass="form-control" required="true" value="#{adminConsoleBean.facilityDemographicsVO.contactFirstName}" /> -->
+									          </div>
+									        </div>
+								        	<label class="col-md-2 control-label">*Owner Last Name</label>
+									        <div class="col-md-4 textfieldGroupContainer">
+									          <div class="textfield-group">
+									          	<!-- <p:inputText id="contactLastName" placeholder="Owner Last Name" styleClass="form-control" required="true" value="#{adminConsoleBean.facilityDemographicsVO.contactLastName}" /> -->
+									          </div>
+									        </div>
+								        </div>
+						        		</fieldset>
+					                	
+					                	<h:outputText value="Skip to last: " />
+					                    <h:selectBooleanCheckbox value="" />
+					                </h:panelGrid>
+					            </p:panel>
+					        </p:tab>
+					        
+					 		
+					 		<p:commandButton value="Submit" update="growl" process="@this"/>
+					    </p:wizard>
+
+
+
+						</h:form>
+						
+						<!-- End Pending Facilities data table -->
+				      <br/>
+				   </div>
+				</div>
+    		</div>
+    			
+    		</ui:define>
+    	</ui:composition>
+    </h:body>
+</html>    

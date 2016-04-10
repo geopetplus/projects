@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.geopetplusadmin.hibernate.admin.LoginDO" table="login">
+		<id name="facilityid" type="java.lang.String">
+			<column name="facilityid" />
+			<generator class="assigned" />
+		</id>
+		<property name="versionid" type="java.lang.String">
+			<column name="versionid" length="4" not-null="true" />
+		</property>
+		<property name="userid" type="java.lang.String">
+			<column name="userid" length="11" not-null="true" />
+		</property>
+		<property name="password" type="java.lang.String">
+			<column name="password" length="10" not-null="true" />
+		</property>
+		<property name="lastupdated" type="java.util.Date">
+			<column name="lastupdated" not-null="true" />
+		</property>
+		<property name="role" type="java.lang.String">
+			<column name="role" length="45" not-null="true" />
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" length="3" not-null="true" />
+		</property>
+		<property name="auditid" type="java.lang.String">
+			<column name="auditid" length="36" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>
