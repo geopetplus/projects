@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.geopetplusadmin.hibernate.admin.AdminDemographicsDO" table="AdminDemographics">
+		<id name="adminid" type="java.lang.String">
+			<column name="adminid" />
+			<generator class="assigned" />
+		</id>
+		<property name="adminLastName" type="java.lang.String">
+			<column name="adminLastName" length="45" not-null="true" />
+		</property>
+		<property name="adminFirstName" type="java.lang.String">
+			<column name="adminFirstName" length="45" not-null="true" />
+		</property>
+		<property name="mailAddr1" type="java.lang.String">
+			<column name="adminAddr1" length="45" not-null="true" />
+		</property>
+		<property name="mailAddr2" type="java.lang.String">
+			<column name="adminAddr2" length="45" not-null="false" />
+		</property>
+		<property name="mailingCity" type="java.lang.String">
+			<column name="adminCity" length="45" not-null="true" />
+		</property>
+		<property name="mailingState" type="java.lang.String">
+			<column name="adminState" length="45" not-null="true" />
+		</property>
+		<property name="mailingPincode" type="java.lang.String">
+			<column name="adminPincode" length="10" not-null="true" />
+		</property>
+		<property name="adminPhone" type="java.lang.String">
+			<column name="adminContact" length="10" not-null="true" />
+		</property>
+		<property name="adminAltContact" type="java.lang.String">
+			<column name="adminAltContact" length="10" not-null="false" />
+		</property>
+		<property name="adminMobileNum" type="java.lang.String">
+			<column name="adminMobileContact" length="10" not-null="true" />
+		</property>
+		<property name="adminEmail" type="java.lang.String">
+			<column name="adminEmail" length="50" not-null="true" />
+		</property>
+		<property name="adminRegStartDate" type="java.util.Date">
+			<column name="adminRegStart" length="10" not-null="true" />
+		</property>
+		<property name="adminRegEndDate" type="java.util.Date">
+			<column name="adminRegEnd" length="10" not-null="true" />
+		</property>
+		<property name="lastUpdateDate" type="java.util.Date">
+			<column name="lastUpdateDate" length="10" not-null="true" />
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" length="3" not-null="true" />
+		</property>
+		<property name="auditID" type="java.lang.String">
+			<column name="auditID" length="10" not-null="true" />
+		</property>
+		
+		
+	</class>
+</hibernate-mapping>

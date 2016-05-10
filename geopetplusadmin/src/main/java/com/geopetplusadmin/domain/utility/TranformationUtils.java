@@ -4,7 +4,9 @@ import org.apache.commons.beanutils.BeanUtils;
 import org.apache.log4j.Logger;
 
 import com.geopetplusadmin.hibernate.admin.FacilityDemographicsDO;
+import com.geopetplusadmin.hibernate.admin.AdminDemographicsDO;
 import com.geopetplusadmin.vo.FacilityDemographicsVO;
+import com.geopetplusadmin.vo.AdminDemographicsVO;
 
 public class TranformationUtils {
 	
@@ -25,4 +27,14 @@ public class TranformationUtils {
 		
 		return facilityDemographicsDO;
 	}	
+	
+	
+	public static AdminDemographicsDO transformAdminDemographicsVO(AdminDemographicsVO adminDemographicsVO) throws Exception {
+		AdminDemographicsDO adminDemographicsDO = null;
+		if (adminDemographicsVO != null) {
+			adminDemographicsDO = new AdminDemographicsDO();
+			BeanUtils.copyProperties(adminDemographicsDO, adminDemographicsVO);
+		}
+		return adminDemographicsDO;
+	}
 }

@@ -1,8 +1,15 @@
 package com.geopetplusadmin.model;
 
+import java.math.BigInteger;
+
+import com.geopetplusadmin.exception.DAOException;
 import com.geopetplusadmin.hibernate.admin.LoginDO;
-import com.geopetplusadmin.vo.FacilityDemographicsVO;
 
 public interface LoginDAO {
-	public String insertLogin(LoginDO loginDO) throws Exception;
+	
+	public void verify(LoginDO loginDO) throws DAOException;
+
+	public String verifyLogin(final String loginid, String password) throws DAOException;
+	 
+	
 }

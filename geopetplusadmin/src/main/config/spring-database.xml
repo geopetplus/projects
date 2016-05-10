@@ -36,6 +36,7 @@
     	<property name="mappingResources">
 			<list>
 				<value>com/geopetplusadmin/hibernate/admin/FacilityDemographics.hbm.xml</value>
+				<value>com/geopetplusadmin/hibernate/admin/AdminDemographics.hbm.xml</value>
 				<value>com/geopetplusadmin/hibernate/admin/Login.hbm.xml</value>
 				<value>com/geopetplusadmin/hibernate/admin/FacilityTerm.hbm.xml</value>
 				<value>com/geopetplusadmin/hibernate/admin/TransactionSummary.hbm.xml</value>

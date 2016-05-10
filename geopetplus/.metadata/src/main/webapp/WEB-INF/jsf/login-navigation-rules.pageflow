@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14610064142581" configfile="/geopetplus/src/main/webapp/WEB-INF/jsf/login-navigation-rules.xml">
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="122" y="178" id="pf14610451691510" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14610451691511 pf14610451691512" path="login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="338" y="178" id="pf14610451691513" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14610451691511" path="index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/adminConsole.xhtml" id="pf14610451691514" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14610451691512" path="/pages/admin/adminConsole.xhtml"/>
+  <links id="pf14610451691511" target="pf14610451691513" source="pf14610451691510" outcome="failure" fromaction="#{loginBean.insertStatus}"/>
+  <links id="pf14610451691512" target="pf14610451691514" source="pf14610451691510" outcome="success" fromaction="#{loginBean.verifyLogin}"/>
+</pageflow:Pageflow>

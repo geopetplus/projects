@@ -16,7 +16,13 @@
 	<bean id="FacilityDemographicsDAO" class="com.geopetplusadmin.model.FacilityDemographicsDAOImpl">
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
 	</bean>
+	<bean id="AdminDemographicsDAO" class="com.geopetplusadmin.model.AdminDemographicsDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
 	<bean id="AdminConsoleDAO" class="com.geopetplusadmin.model.AdminConsoleDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="LoginDAO" class="com.geopetplusadmin.model.LoginDAOImpl">
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
 	</bean>
 	

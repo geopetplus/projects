@@ -38,39 +38,43 @@
         
     			
     			
-    			<div class="top-content">
+ 
         	
             <div class="inner-bg">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-sm-4 col-sm-offset-4 form-box">
-                        	<div class="form-top">
-                        		<div class="form-top-left">
-                        			<h3>Login to our site</h3>
-                            		<div class="form-top-right">
-                        			<i class="fa fa-lock"></i>
-                        			</div>
-                        			<p>Enter your username and password to log on:</p>
-                        		</div>
-                            </div>
-                            <div class="form-bottom">
-			                    <form role="form" action="" method="post" class="login-form">
-			                    	<div class="form-group">
-			                    		<label class="sr-only" for="form-username">Username</label>
-			                        	<p:inputText id="username" placeholder="UserName" styleClass="form-control" required="true" value="" />
-			                        </div>
-			                        <div class="form-group">
-			                        	<label class="sr-only" for="form-password">Password</label>
-			                        	<p:password id="password" placeholder="Password" styleClass="form-control" required="true" value="" />
-			                        </div>
-			                        <p:commandButton id="idButton" value="Submit" />
-			                        <p:spacer width="20px" />
-						    		<p:commandButton value="Reset" immediate="true" />
-			                    </form><br/>
-		                    	<a href="#">Forget Password</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="pull-right">New Registration</a>
-		                    </div>
+    
+                    	<div class="col-sm-4 col-sm-offset-4 form-box">
+
+   	                    <h:form id="LoginFrm" role="form" action="" method="post" class="login-form">
+   	                    		<h2><center>Login</center></h2>
+		                    	<div class="form-group">
+		                    		<label class="sr-only" for="form-username">Username</label>
+		                        	<p:inputText id="username" placeholder="UserName" styleClass="form-control" required="true" value="#{loginBean.loginVO.loginid}" />
+		                        </div>
+		                        <div class="form-group">
+		                        	<label class="sr-only" for="form-password">Password</label>
+		                        	<p:password id="password" placeholder="Password" styleClass="form-control" required="true" value="#{loginBean.loginVO.password}" />
+		                        </div>
+		                        <p:commandButton id="idButton" 
+		                        		value="Submit" 
+										actionListener="#{loginBean.verifyLogin}" 
+						    			update=":LoginFrm:idmessage" />
+		                        <p:spacer width="20px" />
+					    		<p:commandButton value="Reset" immediate="true" /><br/>
+					    		<div class="form-group">
+					    		<div class="col-md-8 pull-left"><a href="/geopetplus/pages/public/adminRegistration.xhtml">Forget ID</a>
+					    		or <a href="/geopetplus/pages/public/adminRegistration.xhtml">Password</a></div>  
+					    		<div class="col-md-4 pull-right">
+					    		|&nbsp;<a href="/geopetplus/pages/public/adminRegistration.xhtml">Register</a></div>
+					    		<p:spacer width="20px" />
+					    	<!--   	<p:messages id="idmessage" />   -->
+					    		<p:outputLabel id="idmessage" value="#{loginBean.message}" />
+					    		
+					    		</div>
+		                    </h:form>
                         </div>
-                    </div>
+
+                    
                     <!-- <div class="row">
                         <div class="col-sm-6 col-sm-offset-3 social-login">
                         	<h3>...or login with:</h3>
@@ -89,14 +93,7 @@
                     </div> -->
                 </div>
             </div>
-            
-        </div>
-    			
-    			
-    			
-    			
-    			
-    			
+            	
     		</ui:define>
     	</ui:composition>
     </h:body>
